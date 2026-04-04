@@ -2,8 +2,22 @@
 <html lang="en" data-theme="powerautomate">
 <head>
     <meta charset="UTF-8">
+    <script>
+        (function () {
+            try {
+                var k = 'pa-color-mode';
+                var s = localStorage.getItem(k);
+                var dark = s === 'dark' || (s !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                document.documentElement.setAttribute('data-theme', dark ? 'powerautomate-dark' : 'powerautomate');
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'powerautomate');
+            }
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn Power Automate — Topics &amp; lessons</title>
+    <link rel="icon" href="./PA.png" type="image/png" />
+    <link rel="apple-touch-icon" href="./PA.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,13 +35,18 @@
                         <span class="hidden sm:inline">Contents</span>
                     </label>
                     <h1 class="text-base sm:text-lg md:text-xl font-bold flex items-center gap-2 min-w-0 truncate">
-                        <i class="fas fa-graduation-cap shrink-0" aria-hidden="true"></i>
+                        <img src="./PA.png" alt="" class="site-logo site-logo--navbar shrink-0" width="40" height="40" decoding="async" />
                         <span class="truncate">Learn Microsoft Power Automate</span>
                     </h1>
                 </div>
-                <div class="navbar-end">
-                    <a href="https://make.powerautomate.com/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm text-primary-content border border-primary-content/30">
-                        <i class="fas fa-external-link-alt"></i> Open Power Automate
+                <div class="navbar-end flex items-center gap-1 sm:gap-2 shrink-0">
+                    <button type="button" class="btn btn-ghost btn-square btn-sm sm:btn-md text-primary-content border border-primary-content/30" data-theme-toggle aria-label="Switch to dark mode" title="Dark mode">
+                        <i class="fas fa-moon theme-toggle-moon text-base sm:text-lg" aria-hidden="true"></i>
+                        <i class="fas fa-sun theme-toggle-sun text-base sm:text-lg hidden text-warning" aria-hidden="true"></i>
+                    </button>
+                    <a href="https://make.powerautomate.com/" target="_blank" rel="noopener noreferrer" title="Open Power Automate" class="btn btn-ghost btn-sm text-primary-content border border-primary-content/30 gap-1 sm:gap-2">
+                        <i class="fas fa-external-link-alt shrink-0" aria-hidden="true"></i>
+                        <span class="hidden sm:inline">Open Power Automate</span>
                     </a>
                 </div>
             </header>
@@ -40,7 +59,7 @@
                 <div class="container mx-auto px-4 relative z-10">
                     <div class="max-w-4xl mx-auto text-center">
                         <h2 class="text-3xl md:text-5xl font-bold mb-5 flex flex-wrap items-center justify-center gap-3 drop-shadow-sm" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-out-quart">
-                            <i class="fas fa-bolt text-3xl md:text-4xl text-warning motion-safe:animate-[iconFloat_3.5s_ease-in-out_infinite] motion-reduce:animate-none" aria-hidden="true"></i>
+                            <img src="./PA.png" alt="" class="site-logo site-logo--hero motion-safe:animate-[iconFloat_3.5s_ease-in-out_infinite] motion-reduce:animate-none" width="64" height="64" decoding="async" />
                             Hands-on topics for Power Automate
                         </h2>
                         <p class="text-lg md:text-xl mb-8 opacity-95 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100" data-aos-duration="750">Everything here is about learning Power Automate: flows, triggers, connectors, Dataverse, Teams, and how to build reliable automations in Microsoft 365 and beyond.</p>
@@ -215,15 +234,18 @@
                         <i class="fas fa-book-open text-primary hidden sm:inline" aria-hidden="true"></i>
                         All lessons
                     </h3>
-                    <p class="text-base-content/75 mb-6 sm:mb-8 max-w-3xl text-sm sm:text-base leading-relaxed" data-aos="fade-up" data-aos-delay="60" data-aos-duration="550"><strong class="text-base-content">One lesson at a time</strong> — you are not scrolling through every topic at once. Use <strong class="text-base-content">Next page</strong> / <strong class="text-base-content">Previous page</strong>, or open <strong class="text-base-content">Contents</strong> in the header to show the slide-out <strong class="text-base-content">table of contents</strong> (toggle it on or off on any screen size). Each lesson ends with a short <strong class="text-base-content">Quick check</strong> (a random multiple-choice question from a small pool—refresh the page if you want another). The URL updates so you can bookmark a page. Scroll further down for learning paths, Microsoft links, and FAQ.</p>
+                    <p class="text-base-content/75 mb-6 sm:mb-8 max-w-3xl text-sm sm:text-base leading-relaxed" data-aos="fade-up" data-aos-delay="60" data-aos-duration="550"><strong class="text-base-content">One lesson at a time</strong> — you read a single chapter in the frame below, not an endless scroll of every topic. Use <strong class="text-base-content">Next page</strong> / <strong class="text-base-content">Previous page</strong>, or open <strong class="text-base-content">Contents</strong> for the slide-out <strong class="text-base-content">table of contents</strong> (works on any screen size). The address bar updates with the lesson so you can bookmark it. Each lesson includes a short <strong class="text-base-content">Quick check</strong> (one random question—refresh for another). <strong class="text-base-content">Learning paths</strong> and the study roadmap are <strong class="text-base-content">above</strong> this section; Microsoft links and the FAQ are <strong class="text-base-content">below</strong>.</p>
 
                     <div class="book-stage-shell mx-auto w-full max-w-3xl px-0 sm:px-1">
-                        <div id="book-stage" class="book-stage rounded-xl sm:rounded-2xl border border-base-300/80 bg-base-100 shadow-[0_4px_36px_-10px_rgba(0,0,0,0.14)] overflow-hidden ring-1 ring-base-300/30">
-                            <div class="book-stage__header flex flex-col gap-2 border-b border-base-300/50 bg-gradient-to-r from-base-200/50 to-base-100 px-3 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-5 sm:py-3">
-                                <p class="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-primary shrink-0">Now reading</p>
-                                <p class="text-[0.7rem] sm:text-xs text-base-content/55 leading-snug">Responsive layout: narrow columns and touch-friendly controls on small viewports; wider reading column on large screens. The table of contents opens from <strong class="font-semibold text-base-content/70">Contents</strong> when you need it.</p>
+                        <div id="book-stage" class="book-stage rounded-xl sm:rounded-2xl border border-base-300/80 bg-base-100 shadow-[0_4px_36px_-10px_rgba(0,0,0,0.14)] overflow-x-hidden overflow-y-visible ring-1 ring-base-300/30">
+                            <div class="book-stage__header flex flex-col gap-3 border-b border-base-300/50 bg-gradient-to-r from-base-200/50 to-base-100 px-3 py-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4 sm:px-5 sm:py-4">
+                                <div class="min-w-0 flex-1">
+                                    <p class="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-primary mb-0.5">Now reading</p>
+                                    <p id="book-now-reading-title" class="text-base sm:text-lg font-semibold text-base-content leading-snug line-clamp-2 sm:line-clamp-none" aria-live="polite">Introduction</p>
+                                </div>
+                                <p class="text-[0.7rem] sm:text-xs text-base-content/55 leading-snug sm:max-w-[14rem] md:max-w-xs sm:text-right sm:pt-0.5 shrink-0">Tip: use <strong class="font-semibold text-base-content/70">Contents</strong> in the header to jump between chapters. On a phone, the reader scrolls with the page; the book frame keeps one lesson in focus.</p>
                             </div>
-                            <div id="lessons-content" class="book-pages min-h-[min(68vh,28rem)] sm:min-h-[min(70vh,34rem)] md:min-h-[min(72vh,42rem)] px-3 py-5 sm:px-6 sm:py-8 md:px-10 md:py-10"></div>
+                            <div id="lessons-content" class="book-pages min-h-[min(60vh,22rem)] sm:min-h-[min(65vh,30rem)] md:min-h-[min(68vh,38rem)] px-3 py-5 sm:px-6 sm:py-8 md:px-10 md:py-10"></div>
                         </div>
                     </div>
                 </div>
@@ -307,13 +329,19 @@
                     <div class="min-w-0 pt-0.5">
                         <p class="text-[0.65rem] font-bold uppercase tracking-widest text-warning/90">In this book</p>
                         <h2 class="text-base font-bold text-warning flex items-center gap-2">
-                            <i class="fas fa-list-ul shrink-0" aria-hidden="true"></i>
+                            <img src="./PA.png" alt="" class="site-logo site-logo--toc shrink-0 rounded-md bg-neutral-content/10 p-0.5" width="32" height="32" decoding="async" />
                             <span class="leading-tight">Table of contents</span>
                         </h2>
                     </div>
-                    <label for="lessons-drawer" class="btn btn-ghost btn-square btn-sm text-warning shrink-0 border border-warning/25 hover:bg-warning/10" title="Close table of contents" aria-label="Close table of contents">
-                        <i class="fas fa-times text-lg" aria-hidden="true"></i>
-                    </label>
+                    <div class="flex items-center gap-1 shrink-0">
+                        <button type="button" class="btn btn-ghost btn-square btn-sm text-warning border border-warning/25 hover:bg-warning/10" data-theme-toggle aria-label="Switch to dark mode" title="Dark mode">
+                            <i class="fas fa-moon theme-toggle-moon" aria-hidden="true"></i>
+                            <i class="fas fa-sun theme-toggle-sun hidden" aria-hidden="true"></i>
+                        </button>
+                        <label for="lessons-drawer" class="btn btn-ghost btn-square btn-sm text-warning border border-warning/25 hover:bg-warning/10" title="Close table of contents" aria-label="Close table of contents">
+                            <i class="fas fa-times text-lg" aria-hidden="true"></i>
+                        </label>
+                    </div>
                 </div>
                 <div class="toc-sidebar__body flex-1 overflow-y-auto overscroll-contain px-4 py-4">
                     <p class="text-xs text-neutral-content/65 mb-4 leading-snug">Use <strong class="text-neutral-content/90">Contents</strong> in the header to show or hide this panel. Click the dimmed area outside or press <kbd class="kbd kbd-sm">Esc</kbd> to close.</p>

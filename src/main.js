@@ -2,6 +2,7 @@ import './style.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { initThemeToggle } from './theme-toggle.js'
 
 function initSmoothAnchors() {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -18,6 +19,8 @@ function initSmoothAnchors() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle()
+
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   AOS.init({
     duration: reduceMotion ? 0 : 780,

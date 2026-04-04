@@ -13,6 +13,7 @@ import { highlightPrismIn } from './learn/prism-highlight.js'
 import { renderLessonNav } from './learn/render-lesson-nav.js'
 import { initLessonQuizzes } from './learn/lesson-quiz-ui.js'
 import { initLearnPage } from './learn-page.js'
+import { initThemeToggle } from './theme-toggle.js'
 import { prefersReducedMotion } from './stagger-aos.js'
 
 function initNonLessonAnchorScroll() {
@@ -31,6 +32,8 @@ function initNonLessonAnchorScroll() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle()
+
   const lessonsContent = document.getElementById('lessons-content')
   const lessonsNav = document.getElementById('lessons-nav')
 

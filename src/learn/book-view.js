@@ -2,6 +2,15 @@ import { LESSON_IDS, LESSON_NAV_ITEMS } from './lesson-manifest.js'
 
 const DEFAULT_LESSON_ID = LESSON_NAV_ITEMS[0]?.id ?? 'lesson-intro'
 
+function lessonTitleForId(lessonId) {
+  return LESSON_NAV_ITEMS.find((l) => l.id === lessonId)?.title ?? lessonId.replace(/^lesson-/, '')
+}
+
+function updateNowReadingLabel(lessonId) {
+  const el = document.getElementById('book-now-reading-title')
+  if (el) el.textContent = lessonTitleForId(lessonId)
+}
+
 /**
  * @param {HTMLElement | null} root
  * @param {{ refreshAos?: () => void; highlightPrismIn?: (el: Element | null) => void }} [opts]
@@ -37,6 +46,7 @@ export function initBookView(root, opts = {}) {
     })
 
     updateTocCurrent(lessonId)
+    updateNowReadingLabel(lessonId)
 
     opts.highlightPrismIn?.(document.getElementById(lessonId))
     opts.refreshAos?.()
@@ -62,14 +72,17 @@ export function initBookView(root, opts = {}) {
     }
 
     const raw = (location.hash || '').replace(/^#/, '')
-    if (!raw || raw === 'lesson-modules') {
+    if (raw === 'lesson-modules') {
+      showLesson(DEFAULT_LESSON_ID)
+      requestAnimationFrame(() => {
+        document.getElementById('lesson-modules')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      })
+      return
+    }
+
+    if (!raw) {
       history.replaceState(null, '', `#${DEFAULT_LESSON_ID}`)
       showLesson(DEFAULT_LESSON_ID)
-      if (raw === 'lesson-modules') {
-        requestAnimationFrame(() => {
-          document.getElementById('lesson-modules')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        })
-      }
       return
     }
 
