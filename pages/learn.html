@@ -3,487 +3,441 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Power Automate - Getting Started</title>
+    <title>Learn Power Automate — Topics &amp; lessons</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+                }
+            }
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <script defer src="https://unpkg.com/alpinejs@3.13.5/dist/cdn.min.js"></script>
 </head>
-<body class="bg-gray-100 flex flex-col">
-    <!-- Mobile Menu Toggle -->
-    <button id="mobile-sidebar-toggle" class="lg:hidden fixed top-4 right-4 z-50 bg-gradient-to-r from-orange-500 to-orange-600 text-white p-3 rounded-lg shadow-lg">
+<body class="bg-slate-50 flex flex-col min-h-screen text-slate-800 font-sans antialiased">
+    <button type="button" id="mobile-sidebar-toggle" class="lg:hidden fixed top-4 right-4 z-50 bg-gradient-to-r from-orange-500 to-orange-600 text-white p-3 rounded-lg shadow-lg" aria-label="Open lessons menu">
         <i class="fas fa-list text-xl"></i>
     </button>
 
-    <!-- Desktop Sidebar Toggle -->
-    <button id="desktop-sidebar-toggle" class="hidden fixed top-4 right-4 z-50 bg-gradient-to-r from-orange-500 to-orange-600 text-white p-3 rounded-lg shadow-lg transition-all duration-300">
+    <button type="button" id="desktop-sidebar-toggle" class="hidden fixed top-4 right-4 z-50 bg-gradient-to-r from-orange-500 to-orange-600 text-white p-3 rounded-lg shadow-lg transition-all duration-300" aria-label="Toggle lessons panel">
         <i id="sidebar-icon" class="fas fa-list text-xl"></i>
     </button>
 
-    <!-- Floating Home Button -->
-    <a href="../index.html" id="floating-home-btn" class="fixed bottom-6 right-6 z-40 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white p-4 rounded-full shadow-xl transition-all duration-300 transform hover:scale-110 group animate-pulse-slow">
+    <a href="../index.html" id="floating-home-btn" class="fixed bottom-6 right-6 z-40 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center" title="Back to home">
         <i class="fas fa-home text-xl"></i>
-        <span class="absolute bottom-full mb-3 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">Back to Home</span>
     </a>
 
-    <header class="bg-gradient-to-r from-orange-400 to-orange-500 text-white py-4 z-20 sticky top-0">
-        <div class="container mx-auto px-4">
-            <h1 class="text-xl md:text-2xl font-bold flex items-center gap-2">
-                <i class="fas fa-graduation-cap"></i>
-                <span class="hidden sm:inline">Power Automate Learning</span>
-                <span class="sm:hidden">PA Learn</span>
+    <header class="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 z-20 sticky top-0 shadow-md">
+        <div class="container mx-auto px-4 flex flex-wrap items-center justify-between gap-2">
+            <h1 class="text-lg md:text-2xl font-bold flex items-center gap-2">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                <span>Learn Microsoft Power Automate</span>
             </h1>
+            <a href="https://make.powerautomate.com/" target="_blank" rel="noopener noreferrer" class="text-sm font-medium bg-white/15 hover:bg-white/25 px-3 py-1.5 rounded-lg transition-colors inline-flex items-center gap-2">
+                <i class="fas fa-external-link-alt"></i> Open Power Automate
+            </a>
         </div>
     </header>
 
     <div class="flex flex-1 relative">
-        <!-- Main Content -->
-        <main id="main-content" class="flex-1 py-12 md:py-20 w-full lg:mr-64 transition-all duration-300">
-            <!-- Hero Section -->
-            <section class="bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 text-white py-16 md:py-24 mb-12 relative overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-r from-orange-300/20 to-orange-400/20 animate-pulse"></div>
+        <main id="main-content" class="flex-1 py-8 md:py-12 w-full lg:mr-64 transition-all duration-300">
+            <section class="bg-gradient-to-br from-orange-500 via-orange-600 to-amber-600 text-white py-14 md:py-20 mb-10 relative overflow-hidden" data-aos="fade-up">
+                <div class="absolute inset-0 bg-white/5"></div>
                 <div class="container mx-auto px-4 relative z-10">
                     <div class="max-w-4xl mx-auto text-center">
-                        <h2 class="text-3xl md:text-5xl font-bold mb-6 animate-fade-in flex items-center justify-center gap-3">
-                            <i class="fas fa-rocket text-orange-200"></i>
-                            Master Power Automate
+                        <h2 class="text-3xl md:text-5xl font-bold mb-5 flex flex-wrap items-center justify-center gap-3">
+                            <i class="fas fa-bolt text-amber-200" aria-hidden="true"></i>
+                            Hands-on topics for Power Automate
                         </h2>
-                        <p class="text-lg md:text-xl mb-8 opacity-90">Transform your workflow with automated processes. From beginner to expert, learn everything you need to streamline your business operations.</p>
-
-                        <!-- Stats -->
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
-                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-all duration-300">
-                                <div class="text-2xl md:text-3xl font-bold">50+</div>
-                                <div class="text-sm opacity-80">Lessons</div>
-                            </div>
-                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-all duration-300">
-                                <div class="text-2xl md:text-3xl font-bold">10k+</div>
-                                <div class="text-sm opacity-80">Students</div>
-                            </div>
-                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-all duration-300">
-                                <div class="text-2xl md:text-3xl font-bold">4.9</div>
-                                <div class="text-sm opacity-80">Rating</div>
-                            </div>
-                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-all duration-300">
-                                <div class="text-2xl md:text-3xl font-bold">24/7</div>
-                                <div class="text-sm opacity-80">Support</div>
-                            </div>
+                        <p class="text-lg md:text-xl mb-8 opacity-95 max-w-2xl mx-auto">Everything here is about learning Power Automate: flows, triggers, connectors, expressions, and how to build reliable automations in Microsoft 365 and beyond.</p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-10 text-sm">
+                            <span class="bg-white/15 px-3 py-1 rounded-full">Cloud flows</span>
+                            <span class="bg-white/15 px-3 py-1 rounded-full">Approvals</span>
+                            <span class="bg-white/15 px-3 py-1 rounded-full">Connectors</span>
+                            <span class="bg-white/15 px-3 py-1 rounded-full">Expressions</span>
+                            <span class="bg-white/15 px-3 py-1 rounded-full">Error handling</span>
                         </div>
-
                         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button class="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 hover:scale-105 transition-all duration-300 flex items-center gap-2">
-                                <i class="fas fa-play"></i>
-                                Start Learning
-                            </button>
-                            <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 hover:scale-105 transition-all duration-300 flex items-center gap-2">
-                                <i class="fas fa-search"></i>
-                                Browse Lessons
-                            </button>
+                            <a href="#lesson-intro" class="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-all inline-flex items-center justify-center gap-2">
+                                <i class="fas fa-book-open"></i> Start with the basics
+                            </a>
+                            <a href="#lesson-modules" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-all inline-flex items-center justify-center gap-2">
+                                <i class="fas fa-list"></i> Jump to all lessons
+                            </a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Search Section -->
-            <section class="mb-12">
+            <section class="mb-10" data-aos="fade-up">
                 <div class="container mx-auto px-4">
-                    <div class="max-w-2xl mx-auto">
-                        <div class="relative">
-                            <input type="text" id="lesson-search" placeholder="Search lessons, topics, or keywords..." class="w-full px-6 py-4 pl-12 rounded-lg border-2 border-gray-200 focus:border-orange-500 focus:outline-none transition-all duration-300 text-lg">
-                            <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                        </div>
+                    <div class="max-w-2xl mx-auto relative">
+                        <label for="lesson-search" class="sr-only">Search lesson titles</label>
+                        <input type="search" id="lesson-search" autocomplete="off" placeholder="Filter lessons in the sidebar (e.g. triggers, JSON, approvals)…" class="w-full px-5 py-3.5 pl-12 rounded-xl border border-slate-200 shadow-sm focus:border-orange-500 focus:ring-2 focus:ring-orange-200 focus:outline-none text-base bg-white">
+                        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" aria-hidden="true"></i>
                     </div>
                 </div>
             </section>
 
-            <!-- Learning Paths -->
-            <section class="mb-16">
+            <section class="mb-14" data-aos="fade-up">
                 <div class="container mx-auto px-4">
-                    <h3 class="text-2xl md:text-3xl font-bold text-center mb-12 flex items-center justify-center gap-3">
+                    <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 flex flex-wrap items-center justify-center gap-2 text-slate-900">
                         <i class="fas fa-route text-orange-500"></i>
-                        Choose Your Learning Path
+                        Learning paths (topic order)
                     </h3>
-
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <!-- Beginner Path -->
-                        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-green-500 interactive-element">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <article class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border-t-4 border-emerald-500 overflow-hidden">
                             <div class="p-6">
-                                <div class="flex items-center gap-3 mb-4">
-                                    <div class="bg-green-100 p-3 rounded-lg">
-                                        <i class="fas fa-seedling text-green-600 text-xl"></i>
-                                    </div>
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="bg-emerald-100 p-3 rounded-lg"><i class="fas fa-seedling text-emerald-600 text-xl"></i></div>
                                     <h4 class="text-xl font-bold">Beginner</h4>
                                 </div>
-                                <p class="text-gray-600 mb-4">Perfect for those new to automation. Learn the fundamentals and build your first flows.</p>
-                                <div class="flex items-center gap-2 mb-4">
-                                    <i class="fas fa-clock text-gray-400"></i>
-                                    <span class="text-sm text-gray-500">2-3 hours</span>
-                                </div>
-                                <div class="flex items-center gap-2 mb-6">
-                                    <i class="fas fa-graduation-cap text-gray-400"></i>
-                                    <span class="text-sm text-gray-500">5 lessons</span>
-                                </div>
-                                <button class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 hover:scale-105">
-                                    <i class="fas fa-play"></i>
-                                    Start Path
-                                </button>
+                                <p class="text-slate-600 mb-4">Interface, flow types, triggers, actions, and variables.</p>
+                                <a href="#lesson-intro" class="w-full inline-flex justify-center items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-lg font-semibold transition-colors">Go to beginner topics</a>
                             </div>
-                        </div>
-
-                        <!-- Intermediate Path -->
-                        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-blue-500 interactive-element">
+                        </article>
+                        <article class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border-t-4 border-sky-500 overflow-hidden">
                             <div class="p-6">
-                                <div class="flex items-center gap-3 mb-4">
-                                    <div class="bg-blue-100 p-3 rounded-lg">
-                                        <i class="fas fa-cogs text-blue-600 text-xl"></i>
-                                    </div>
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="bg-sky-100 p-3 rounded-lg"><i class="fas fa-cogs text-sky-600 text-xl"></i></div>
                                     <h4 class="text-xl font-bold">Intermediate</h4>
                                 </div>
-                                <p class="text-gray-600 mb-4">Dive deeper into advanced features, conditions, and complex workflows.</p>
-                                <div class="flex items-center gap-2 mb-4">
-                                    <i class="fas fa-clock text-gray-400"></i>
-                                    <span class="text-sm text-gray-500">4-5 hours</span>
-                                </div>
-                                <div class="flex items-center gap-2 mb-6">
-                                    <i class="fas fa-graduation-cap text-gray-400"></i>
-                                    <span class="text-sm text-gray-500">8 lessons</span>
-                                </div>
-                                <button class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 hover:scale-105">
-                                    <i class="fas fa-play"></i>
-                                    Start Path
-                                </button>
+                                <p class="text-slate-600 mb-4">Branching, loops, approvals, and choosing connectors.</p>
+                                <a href="#lesson-conditions" class="w-full inline-flex justify-center items-center gap-2 bg-sky-600 hover:bg-sky-700 text-white py-3 rounded-lg font-semibold transition-colors">Go to intermediate topics</a>
                             </div>
-                        </div>
-
-                        <!-- Advanced Path -->
-                        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-purple-500 interactive-element">
+                        </article>
+                        <article class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border-t-4 border-violet-500 overflow-hidden md:col-span-2 lg:col-span-1">
                             <div class="p-6">
-                                <div class="flex items-center gap-3 mb-4">
-                                    <div class="bg-purple-100 p-3 rounded-lg">
-                                        <i class="fas fa-rocket text-purple-600 text-xl"></i>
-                                    </div>
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="bg-violet-100 p-3 rounded-lg"><i class="fas fa-rocket text-violet-600 text-xl"></i></div>
                                     <h4 class="text-xl font-bold">Advanced</h4>
                                 </div>
-                                <p class="text-gray-600 mb-4">Master expressions, APIs, and enterprise-level automation solutions.</p>
-                                <div class="flex items-center gap-2 mb-4">
-                                    <i class="fas fa-clock text-gray-400"></i>
-                                    <span class="text-sm text-gray-500">6-8 hours</span>
-                                </div>
-                                <div class="flex items-center gap-2 mb-6">
-                                    <i class="fas fa-graduation-cap text-gray-400"></i>
-                                    <span class="text-sm text-gray-500">12 lessons</span>
-                                </div>
-                                <button class="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 hover:scale-105">
-                                    <i class="fas fa-play"></i>
-                                    Start Path
-                                </button>
+                                <p class="text-slate-600 mb-4">Expressions, JSON, HTTP calls, and resilient run design.</p>
+                                <a href="#lesson-expressions" class="w-full inline-flex justify-center items-center gap-2 bg-violet-600 hover:bg-violet-700 text-white py-3 rounded-lg font-semibold transition-colors">Go to advanced topics</a>
                             </div>
-                        </div>
+                        </article>
                     </div>
                 </div>
             </section>
 
-            <!-- Progress Section -->
-            <section class="mb-16 bg-gray-50 py-12">
+            <section id="study-roadmap" class="mb-14 bg-white py-12 border-y border-slate-100" data-aos="fade-up">
                 <div class="container mx-auto px-4">
-                    <h3 class="text-2xl md:text-3xl font-bold text-center mb-12 flex items-center justify-center gap-3">
-                        <i class="fas fa-chart-line text-orange-500"></i>
-                        Your Learning Progress
+                    <h3 class="text-2xl md:text-3xl font-bold text-center mb-4 text-slate-900 flex flex-wrap items-center justify-center gap-2">
+                        <i class="fas fa-map-signs text-orange-500"></i>
+                        Suggested study order
                     </h3>
-
-                    <div class="max-w-4xl mx-auto">
-                        <div class="bg-white rounded-xl shadow-lg p-8">
-                            <div class="flex items-center justify-between mb-6">
-                                <h4 class="text-xl font-semibold">Overall Progress</h4>
-                                <span class="text-2xl font-bold text-orange-500">15%</span>
-                            </div>
-
-                            <div class="w-full bg-gray-200 rounded-full h-4 mb-6">
-                                <div class="bg-gradient-to-r from-orange-400 to-orange-600 h-4 rounded-full transition-all duration-1000" style="width: 15%"></div>
-                            </div>
-
-                            <div class="grid md:grid-cols-3 gap-6">
-                                <div class="text-center p-4 rounded-lg hover:bg-green-50 transition-all duration-300 cursor-pointer interactive-element">
-                                    <div class="text-3xl font-bold text-green-500 mb-2">2</div>
-                                    <div class="text-sm text-gray-600">Completed</div>
-                                </div>
-                                <div class="text-center p-4 rounded-lg hover:bg-blue-50 transition-all duration-300 cursor-pointer interactive-element">
-                                    <div class="text-3xl font-bold text-blue-500 mb-2">8</div>
-                                    <div class="text-sm text-gray-600">In Progress</div>
-                                </div>
-                                <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-all duration-300 cursor-pointer interactive-element">
-                                    <div class="text-3xl font-bold text-gray-400 mb-2">40</div>
-                                    <div class="text-sm text-gray-600">Remaining</div>
-                                </div>
-                            </div>
-
-                            <div class="mt-8">
-                                <button class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2">
-                                    <i class="fas fa-play"></i>
-                                    Continue Learning
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="text-center text-slate-600 max-w-2xl mx-auto mb-10">No sign-in on this site—use this sequence in your own tenant or trial while you practice in <a href="https://make.powerautomate.com/" class="text-orange-600 font-medium hover:underline" target="_blank" rel="noopener noreferrer">Power Automate</a>.</p>
+                    <ol class="max-w-3xl mx-auto space-y-3 list-decimal list-inside text-slate-700">
+                        <li><a class="text-orange-600 hover:underline font-medium" href="#lesson-intro">Introduction</a> — what automations are and when to use cloud flows.</li>
+                        <li><a class="text-orange-600 hover:underline font-medium" href="#lesson-interface">Designer &amp; environments</a> — navigate the maker portal safely.</li>
+                        <li><a class="text-orange-600 hover:underline font-medium" href="#lesson-flows">Types of flows</a> — pick the right pattern (automated, instant, scheduled, etc.).</li>
+                        <li><a class="text-orange-600 hover:underline font-medium" href="#lesson-triggers">Triggers &amp; actions</a> — dynamic content and run context.</li>
+                        <li><a class="text-orange-600 hover:underline font-medium" href="#lesson-variables">Variables</a> — store and reuse data inside a run.</li>
+                        <li>Then continue with conditions, loops, approvals, connectors, expressions, JSON, APIs, and error handling below.</li>
+                    </ol>
                 </div>
             </section>
 
-            <!-- Quick Start Guide -->
-            <section class="mb-16">
+            <section class="mb-14" data-aos="fade-up">
                 <div class="container mx-auto px-4">
-                    <h3 class="text-2xl md:text-3xl font-bold text-center mb-12 flex items-center justify-center gap-3">
+                    <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 flex flex-wrap items-center justify-center gap-2 text-slate-900">
                         <i class="fas fa-lightbulb text-orange-500"></i>
-                        Quick Start Guide
+                        Quick start in the real product
                     </h3>
-
-                    <div class="max-w-4xl mx-auto">
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div class="space-y-6">
-                                <div class="flex items-start gap-4 p-4 rounded-lg hover:bg-orange-50 transition-all duration-300 cursor-pointer interactive-element">
-                                    <div class="bg-orange-100 p-3 rounded-lg flex-shrink-0">
-                                        <span class="text-orange-600 font-bold text-lg">1</span>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-semibold mb-2">Create Your Account</h4>
-                                        <p class="text-gray-600">Sign up for Power Automate and explore the interface.</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-start gap-4 p-4 rounded-lg hover:bg-orange-50 transition-all duration-300 cursor-pointer interactive-element">
-                                    <div class="bg-orange-100 p-3 rounded-lg flex-shrink-0">
-                                        <span class="text-orange-600 font-bold text-lg">2</span>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-semibold mb-2">Build Your First Flow</h4>
-                                        <p class="text-gray-600">Start with a simple automated workflow.</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-start gap-4 p-4 rounded-lg hover:bg-orange-50 transition-all duration-300 cursor-pointer interactive-element">
-                                    <div class="bg-orange-100 p-3 rounded-lg flex-shrink-0">
-                                        <span class="text-orange-600 font-bold text-lg">3</span>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-semibold mb-2">Add Triggers & Actions</h4>
-                                        <p class="text-gray-600">Learn how to trigger flows and add actions.</p>
-                                    </div>
-                                </div>
+                    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+                        <div class="flex gap-4 p-4 rounded-xl bg-white border border-slate-100 shadow-sm">
+                            <div class="bg-orange-100 w-10 h-10 rounded-lg flex items-center justify-center shrink-0 font-bold text-orange-700">1</div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Get access</h4>
+                                <p class="text-slate-600 text-sm">Use Microsoft 365 with Power Automate, or start from the official product pages for trial and licensing options.</p>
                             </div>
-
-                            <div class="space-y-6">
-                                <div class="flex items-start gap-4 p-4 rounded-lg hover:bg-orange-50 transition-all duration-300 cursor-pointer interactive-element">
-                                    <div class="bg-orange-100 p-3 rounded-lg flex-shrink-0">
-                                        <span class="text-orange-600 font-bold text-lg">4</span>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-semibold mb-2">Test & Debug</h4>
-                                        <p class="text-gray-600">Run your flows and fix any issues.</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-start gap-4 p-4 rounded-lg hover:bg-orange-50 transition-all duration-300 cursor-pointer interactive-element">
-                                    <div class="bg-orange-100 p-3 rounded-lg flex-shrink-0">
-                                        <span class="text-orange-600 font-bold text-lg">5</span>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-semibold mb-2">Share & Collaborate</h4>
-                                        <p class="text-gray-600">Share your flows with team members.</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-start gap-4 p-4 rounded-lg hover:bg-orange-50 transition-all duration-300 cursor-pointer interactive-element">
-                                    <div class="bg-orange-100 p-3 rounded-lg flex-shrink-0">
-                                        <span class="text-orange-600 font-bold text-lg">6</span>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-semibold mb-2">Monitor & Optimize</h4>
-                                        <p class="text-gray-600">Track performance and improve your automations.</p>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="flex gap-4 p-4 rounded-xl bg-white border border-slate-100 shadow-sm">
+                            <div class="bg-orange-100 w-10 h-10 rounded-lg flex items-center justify-center shrink-0 font-bold text-orange-700">2</div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Create a solution (recommended)</h4>
+                                <p class="text-slate-600 text-sm">Put flows in a <strong>Solution</strong> so you can move them across environments with ALM practices.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 p-4 rounded-xl bg-white border border-slate-100 shadow-sm">
+                            <div class="bg-orange-100 w-10 h-10 rounded-lg flex items-center justify-center shrink-0 font-bold text-orange-700">3</div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Build a minimal cloud flow</h4>
+                                <p class="text-slate-600 text-sm">Choose a trigger (for example Outlook or manual), add one action, and save.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 p-4 rounded-xl bg-white border border-slate-100 shadow-sm">
+                            <div class="bg-orange-100 w-10 h-10 rounded-lg flex items-center justify-center shrink-0 font-bold text-orange-700">4</div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Test with “Test” and run history</h4>
+                                <p class="text-slate-600 text-sm">Use Test flow and inspect each step’s inputs and outputs in the run details.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 p-4 rounded-xl bg-white border border-slate-100 shadow-sm">
+                            <div class="bg-orange-100 w-10 h-10 rounded-lg flex items-center justify-center shrink-0 font-bold text-orange-700">5</div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Turn on and monitor</h4>
+                                <p class="text-slate-600 text-sm">Turn the flow on, then use run history and alerts to confirm behavior in production.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 p-4 rounded-xl bg-white border border-slate-100 shadow-sm">
+                            <div class="bg-orange-100 w-10 h-10 rounded-lg flex items-center justify-center shrink-0 font-bold text-orange-700">6</div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Iterate with patterns</h4>
+                                <p class="text-slate-600 text-sm">Add conditions, approvals, and error scopes as requirements grow—see the lessons below.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Interactive Demo Section -->
-            <section class="mb-16 bg-gradient-to-r from-gray-800 to-gray-900 text-white py-16">
+            <section id="lesson-modules" class="mb-6 scroll-mt-24" data-aos="fade-up">
                 <div class="container mx-auto px-4">
-                    <div class="max-w-4xl mx-auto text-center">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-8 flex items-center justify-center gap-3">
-                            <i class="fas fa-play-circle text-orange-400"></i>
-                            See Power Automate in Action
+                    <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">All lessons</h3>
+                    <p class="text-slate-600 mb-10 max-w-3xl">Each section maps to concepts you will use in the Power Automate designer. Follow links to Microsoft Learn for deeper modules.</p>
+
+                    <article id="lesson-intro" class="lesson-card mb-12 scroll-mt-28 bg-white rounded-2xl shadow-md border border-slate-100 p-6 md:p-8">
+                        <h4 class="text-xl font-bold text-orange-600 mb-3 flex items-center gap-2"><i class="fas fa-circle-info"></i> Introduction</h4>
+                        <div class="prose-slate max-w-3xl space-y-3 text-slate-700">
+                            <p><strong>Power Automate</strong> is Microsoft’s service for automating tasks across apps and services. A <strong>cloud flow</strong> reacts to triggers (email arrived, item created, schedule, button) and runs a sequence of actions with connectors.</p>
+                            <p>Use it to replace repetitive copy-paste work, route approvals, sync data, and notify people—while keeping logic documented in one place.</p>
+                            <p class="text-sm">Official overview: <a href="https://learn.microsoft.com/power-automate/getting-started" class="text-orange-600 hover:underline" target="_blank" rel="noopener noreferrer">Get started with Power Automate</a>.</p>
+                        </div>
+                    </article>
+
+                    <article id="lesson-interface" class="lesson-card mb-12 scroll-mt-28 bg-white rounded-2xl shadow-md border border-slate-100 p-6 md:p-8">
+                        <h4 class="text-xl font-bold text-orange-600 mb-3 flex items-center gap-2"><i class="fas fa-display"></i> Maker portal &amp; environments</h4>
+                        <div class="max-w-3xl space-y-3 text-slate-700">
+                            <p>Open <a href="https://make.powerautomate.com/" class="text-orange-600 hover:underline" target="_blank" rel="noopener noreferrer">make.powerautomate.com</a>. You will work with:</p>
+                            <ul class="list-disc list-inside space-y-1 text-slate-700">
+                                <li><strong>My flows</strong> — list of flows you own or co-own.</li>
+                                <li><strong>Solutions</strong> — packages for apps, flows, and connection references for ALM.</li>
+                                <li><strong>Environments</strong> — boundaries for data and security; use non-production environments for learning.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article id="lesson-flows" class="lesson-card mb-12 scroll-mt-28 bg-white rounded-2xl shadow-md border border-slate-100 p-6 md:p-8">
+                        <h4 class="text-xl font-bold text-orange-600 mb-3 flex items-center gap-2"><i class="fas fa-shuffle"></i> Types of flows</h4>
+                        <div class="max-w-3xl space-y-3 text-slate-700">
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><strong>Automated cloud flow</strong> — starts when an event happens in a connector.</li>
+                                <li><strong>Instant cloud flow</strong> — user or app starts it manually (button, Power Apps, Teams).</li>
+                                <li><strong>Scheduled cloud flow</strong> — runs on a recurrence.</li>
+                                <li><strong>Desktop flow (RPA)</strong> — automates Windows/UI through Power Automate for desktop.</li>
+                                <li><strong>Business process flow</strong> — guided stages in model-driven apps (Dataverse).</li>
+                            </ul>
+                            <p class="text-sm"><a href="https://learn.microsoft.com/power-automate/flow-types" class="text-orange-600 hover:underline" target="_blank" rel="noopener noreferrer">Compare flow types (Microsoft Learn)</a></p>
+                        </div>
+                    </article>
+
+                    <article id="lesson-triggers" class="lesson-card mb-12 scroll-mt-28 bg-white rounded-2xl shadow-md border border-slate-100 p-6 md:p-8">
+                        <h4 class="text-xl font-bold text-orange-600 mb-3 flex items-center gap-2"><i class="fas fa-play"></i> Triggers &amp; actions</h4>
+                        <div class="max-w-3xl space-y-3 text-slate-700">
+                            <p>Every flow has exactly one <strong>trigger</strong>. Each subsequent step is an <strong>action</strong>. The outputs of earlier steps appear as <strong>dynamic content</strong> for later steps.</p>
+                            <p>Rename steps clearly (for example “Get manager for submitter”) so run history and handoffs stay understandable.</p>
+                        </div>
+                    </article>
+
+                    <article id="lesson-variables" class="lesson-card mb-12 scroll-mt-28 bg-white rounded-2xl shadow-md border border-slate-100 p-6 md:p-8">
+                        <h4 class="text-xl font-bold text-orange-600 mb-3 flex items-center gap-2"><i class="fas fa-box"></i> Variables</h4>
+                        <div class="max-w-3xl space-y-3 text-slate-700">
+                            <p>Use <strong>Initialize variable</strong> to create typed storage within a run. Common uses: counters, building a string across a loop, or holding parsed JSON.</p>
+                            <p>Prefer scoping variables inside the smallest scope that needs them (for example inside <em>Apply to each</em> when appropriate).</p>
+                        </div>
+                    </article>
+
+                    <article id="lesson-conditions" class="lesson-card mb-12 scroll-mt-28 bg-white rounded-2xl shadow-md border border-slate-100 p-6 md:p-8">
+                        <h4 class="text-xl font-bold text-orange-600 mb-3 flex items-center gap-2"><i class="fas fa-code-branch"></i> Conditional logic</h4>
+                        <div class="max-w-3xl space-y-3 text-slate-700">
+                            <p>The <strong>Condition</strong> action splits yes/no paths. <strong>Switch</strong> compares one value to many cases—cleaner than nested conditions.</p>
+                            <p>For parallel work, explore parallel branches; merge carefully so you do not duplicate side effects.</p>
+                        </div>
+                    </article>
+
+                    <article id="lesson-loops" class="lesson-card mb-12 scroll-mt-28 bg-white rounded-2xl shadow-md border border-slate-100 p-6 md:p-8">
+                        <h4 class="text-xl font-bold text-orange-600 mb-3 flex items-center gap-2"><i class="fas fa-rotate"></i> Loops</h4>
+                        <div class="max-w-3xl space-y-3 text-slate-700">
+                            <p><strong>Apply to each</strong> walks a list (for example attachments, rows, or child items). Watch API limits and consider batching or filtering first.</p>
+                            <p>Concurrency settings can speed independent iterations but can also stress downstream systems—tune deliberately.</p>
+                        </div>
+                    </article>
+
+                    <article id="lesson-approvals" class="lesson-card mb-12 scroll-mt-28 bg-white rounded-2xl shadow-md border border-slate-100 p-6 md:p-8">
+                        <h4 class="text-xl font-bold text-orange-600 mb-3 flex items-center gap-2"><i class="fas fa-check-double"></i> Approvals</h4>
+                        <div class="max-w-3xl space-y-3 text-slate-700">
+                            <p>Approval actions pause a run until a decision is recorded in Microsoft 365. Model who approves, timeouts, and what happens on reject.</p>
+                            <p class="text-sm"><a href="https://learn.microsoft.com/power-automate/modern-approvals" class="text-orange-600 hover:underline" target="_blank" rel="noopener noreferrer">Modern approvals in Power Automate</a></p>
+                        </div>
+                    </article>
+
+                    <article id="lesson-connectors" class="lesson-card mb-12 scroll-mt-28 bg-white rounded-2xl shadow-md border border-slate-100 p-6 md:p-8">
+                        <h4 class="text-xl font-bold text-orange-600 mb-3 flex items-center gap-2"><i class="fas fa-plug"></i> Connectors</h4>
+                        <div class="max-w-3xl space-y-3 text-slate-700">
+                            <p>Connectors wrap APIs into triggers and actions. Some are <strong>standard</strong>, others <strong>premium</strong> (licensing applies). Custom connectors let your organization expose internal APIs.</p>
+                            <p>Use <strong>connection references</strong> in solutions so flows can be moved between environments with correct credentials.</p>
+                        </div>
+                    </article>
+
+                    <article id="lesson-expressions" class="lesson-card mb-12 scroll-mt-28 bg-white rounded-2xl shadow-md border border-slate-100 p-6 md:p-8">
+                        <h4 class="text-xl font-bold text-orange-600 mb-3 flex items-center gap-2"><i class="fas fa-function"></i> Expressions</h4>
+                        <div class="max-w-3xl space-y-3 text-slate-700">
+                            <p>Open the expression editor (<strong>fx</strong>) to transform data: dates, strings, math, and logical tests. Expressions use workflow definition language functions.</p>
+                            <pre class="rounded-lg text-sm !m-0"><code class="language-javascript">concat('Ticket-', triggerOutputs()?['body/id'])
+formatDateTime(utcNow(), 'yyyy-MM-dd')</code></pre>
+                        </div>
+                    </article>
+
+                    <article id="lesson-json" class="lesson-card mb-12 scroll-mt-28 bg-white rounded-2xl shadow-md border border-slate-100 p-6 md:p-8">
+                        <h4 class="text-xl font-bold text-orange-600 mb-3 flex items-center gap-2"><i class="fas fa-brackets-curly"></i> JSON</h4>
+                        <div class="max-w-3xl space-y-3 text-slate-700">
+                            <p>Use <strong>Parse JSON</strong> with a schema so you can reference properties as dynamic content. Generate a schema from a sample payload when prototyping.</p>
+                            <pre class="rounded-lg text-sm !m-0"><code class="language-json">{
+  "id": 42,
+  "status": "submitted"
+}</code></pre>
+                        </div>
+                    </article>
+
+                    <article id="lesson-api" class="lesson-card mb-12 scroll-mt-28 bg-white rounded-2xl shadow-md border border-slate-100 p-6 md:p-8">
+                        <h4 class="text-xl font-bold text-orange-600 mb-3 flex items-center gap-2"><i class="fas fa-cloud"></i> HTTP &amp; APIs</h4>
+                        <div class="max-w-3xl space-y-3 text-slate-700">
+                            <p>The <strong>HTTP</strong> action calls REST endpoints. Secure secrets in Azure Key Vault or environment variables as your organization requires.</p>
+                            <p>For Microsoft Graph and other protected APIs, use first-party connectors or Azure AD–backed authentication patterns supported in your tenant.</p>
+                        </div>
+                    </article>
+
+                    <article id="lesson-errors" class="lesson-card mb-12 scroll-mt-28 bg-white rounded-2xl shadow-md border border-slate-100 p-6 md:p-8">
+                        <h4 class="text-xl font-bold text-orange-600 mb-3 flex items-center gap-2"><i class="fas fa-shield-halved"></i> Error handling</h4>
+                        <div class="max-w-3xl space-y-3 text-slate-700">
+                            <p>Configure <strong>Configure run after</strong> on actions to catch failures, timeouts, or skips. Wrap risky sections in a <strong>Scope</strong> and pair with a run-after branch for centralized handling.</p>
+                            <p>Send meaningful notifications (including run URL) so support can replay or fix quickly.</p>
+                            <p class="text-sm"><a href="https://learn.microsoft.com/power-automate/error-handling" class="text-orange-600 hover:underline" target="_blank" rel="noopener noreferrer">Error handling guidance</a></p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="mb-14 bg-slate-900 text-white py-14" data-aos="fade-up">
+                <div class="container mx-auto px-4">
+                    <div class="max-w-3xl mx-auto text-center">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4 flex flex-wrap items-center justify-center gap-2">
+                            <i class="fas fa-video text-orange-400"></i>
+                            Learn from Microsoft
                         </h3>
-                        <p class="text-lg mb-8 opacity-90">Watch a quick demo of how Power Automate can transform your workflow.</p>
-
-                        <div class="bg-gray-700 rounded-xl p-8 mb-8">
-                            <div class="aspect-video bg-gray-600 rounded-lg flex items-center justify-center">
-                                <button class="bg-orange-500 hover:bg-orange-600 text-white p-6 rounded-full transition-all duration-300 transform hover:scale-110">
-                                    <i class="fas fa-play text-2xl"></i>
-                                </button>
-                            </div>
-                            <p class="text-center mt-4 text-gray-300">Interactive demo coming soon!</p>
-                        </div>
-
+                        <p class="text-slate-300 mb-8">This site is a structured outline; video training lives on Microsoft Learn and the Power Platform channel.</p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2">
-
-                                <i class="fas fa-download"></i>
-                                Download Guide
-                            </button>
+                            <a href="https://learn.microsoft.com/training/browse/?products=power-automate" class="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-graduation-cap"></i> Power Automate training
+                            </a>
+                            <a href="https://learn.microsoft.com/power-automate/" class="inline-flex items-center justify-center gap-2 border border-slate-500 hover:border-orange-400 hover:text-orange-200 px-6 py-3 rounded-lg font-semibold transition-colors" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-book"></i> Documentation hub
+                            </a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- FAQ Section -->
-            <section class="mb-16">
+            <section class="mb-16" data-aos="fade-up">
                 <div class="container mx-auto px-4">
-                    <h3 class="text-2xl md:text-3xl font-bold text-center mb-12 flex items-center justify-center gap-3">
-                        <i class="fas fa-question-circle text-orange-500"></i>
-                        Frequently Asked Questions
+                    <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 text-slate-900 flex flex-wrap items-center justify-center gap-2">
+                        <i class="fas fa-circle-question text-orange-500"></i>
+                        FAQ
                     </h3>
-
-                    <div class="max-w-3xl mx-auto space-y-4">
-                        <div class="bg-white rounded-lg shadow-md">
-                            <button class="faq-toggle w-full text-left p-6 focus:outline-none flex items-center justify-between">
-                                <span class="font-semibold">What is Power Automate?</span>
-                                <i class="fas fa-chevron-down text-orange-500 transition-transform duration-300"></i>
+                    <div class="max-w-3xl mx-auto space-y-3" x-data="{ open: null }">
+                        <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                            <button type="button" class="w-full text-left p-5 flex justify-between items-center gap-3 font-semibold text-slate-900 hover:bg-slate-50" @click="open = open === 1 ? null : 1" :aria-expanded="open === 1">
+                                What is Power Automate?
+                                <i class="fas fa-chevron-down text-orange-500 transition-transform shrink-0" :class="open === 1 && 'rotate-180'"></i>
                             </button>
-                            <div class="faq-content hidden p-6 pt-0">
-                                <p class="text-gray-600">Power Automate is Microsoft's workflow automation platform that allows you to create automated workflows between your favorite apps and services.</p>
+                            <div class="px-5 pb-5 text-slate-600 border-t border-slate-100" x-show="open === 1" x-transition x-cloak>
+                                <p class="pt-3">Microsoft’s automation service for connecting apps and services. You design flows that start with a trigger and perform actions using connectors—often with no traditional coding.</p>
                             </div>
                         </div>
-
-                        <div class="bg-white rounded-lg shadow-md">
-                            <button class="faq-toggle w-full text-left p-6 focus:outline-none flex items-center justify-between">
-                                <span class="font-semibold">Do I need coding experience?</span>
-                                <i class="fas fa-chevron-down text-orange-500 transition-transform duration-300"></i>
+                        <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                            <button type="button" class="w-full text-left p-5 flex justify-between items-center gap-3 font-semibold text-slate-900 hover:bg-slate-50" @click="open = open === 2 ? null : 2" :aria-expanded="open === 2">
+                                Do I need to be a developer?
+                                <i class="fas fa-chevron-down text-orange-500 transition-transform shrink-0" :class="open === 2 && 'rotate-180'"></i>
                             </button>
-                            <div class="faq-content hidden p-6 pt-0">
-                                <p class="text-gray-600">No coding experience is required! Power Automate uses a visual designer that makes it easy to build powerful automations.</p>
+                            <div class="px-5 pb-5 text-slate-600 border-t border-slate-100" x-show="open === 2" x-transition x-cloak>
+                                <p class="pt-3">No. Many flows are built visually. Expressions and HTTP actions add power similar to lightweight development—still focused on automation, not building a full app from scratch.</p>
                             </div>
                         </div>
-
-                        <div class="bg-white rounded-lg shadow-md">
-                            <button class="faq-toggle w-full text-left p-6 focus:outline-none flex items-center justify-between">
-                                <span class="font-semibold">How much does it cost?</span>
-                                <i class="fas fa-chevron-down text-orange-500 transition-transform duration-300"></i>
+                        <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                            <button type="button" class="w-full text-left p-5 flex justify-between items-center gap-3 font-semibold text-slate-900 hover:bg-slate-50" @click="open = open === 3 ? null : 3" :aria-expanded="open === 3">
+                                Where do I practice safely?
+                                <i class="fas fa-chevron-down text-orange-500 transition-transform shrink-0" :class="open === 3 && 'rotate-180'"></i>
                             </button>
-                            <div class="faq-content hidden p-6 pt-0">
-                                <p class="text-gray-600">Power Automate has a free tier for basic use, with premium features available through Microsoft 365 subscriptions.</p>
+                            <div class="px-5 pb-5 text-slate-600 border-t border-slate-100" x-show="open === 3" x-transition x-cloak>
+                                <p class="pt-3">Use a non-production environment or trial tenant. Avoid pointing experimental flows at production financial or customer systems until you have tested run history, limits, and security.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
-        </main>
 
-        <!-- Right Sidebar Navigation -->
-        <aside id="lessons-sidebar" class="fixed right-0 top-0 h-full w-64 bg-gradient-to-b from-gray-800 to-gray-900 text-white p-4 z-40 shadow-xl border-l-4 border-orange-400 overflow-y-auto transform translate-x-full transition-transform duration-300">
-            <button id="mobile-sidebar-close" class="lg:hidden absolute top-4 left-4 text-orange-300 text-2xl">
+        <aside id="lessons-sidebar" class="fixed right-0 top-0 h-full w-64 max-w-[85vw] bg-gradient-to-b from-slate-800 to-slate-900 text-white p-4 z-40 shadow-xl border-l-4 border-orange-400 overflow-y-auto translate-x-full transition-transform duration-300" aria-label="Lesson navigation">
+            <button type="button" id="mobile-sidebar-close" class="lg:hidden absolute top-4 left-4 text-orange-300 text-2xl" aria-label="Close lessons menu">
                 <i class="fas fa-times"></i>
             </button>
-            <h2 class="text-lg md:text-xl font-bold mb-6 text-orange-300 flex items-center gap-2">
-                <i class="fas fa-list-check"></i>
-                Lessons
+            <h2 class="text-lg font-bold mb-6 mt-8 lg:mt-0 text-orange-300 flex items-center gap-2">
+                <i class="fas fa-list-check"></i> Lessons
             </h2>
-            <nav class="space-y-2">
-                <!-- Basics Section -->
-                <div class="mb-6">
-                    <h3 class="text-xs md:text-sm font-semibold text-orange-400 uppercase mb-3 flex items-center gap-2">
-                        <i class="fas fa-star w-4"></i>
-                        Basics
-                    </h3>
-                    <ul class="space-y-2">
-                        <li><a href="#lesson-intro" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 hover:text-white transition-all duration-300 transform hover:scale-105 text-sm md:text-base">
-                            <i class="fas fa-circle text-orange-400 text-xs"></i>
-                            <span>Introduction</span>
-                        </a></li>
-                        <li><a href="#lesson-interface" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 hover:text-white transition-all duration-300 transform hover:scale-105 text-sm md:text-base">
-                            <i class="fas fa-circle text-orange-400 text-xs"></i>
-                            <span>Interface</span>
-                        </a></li>
-                        <li><a href="#lesson-flows" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 hover:text-white transition-all duration-300 transform hover:scale-105 text-sm md:text-base">
-                            <i class="fas fa-circle text-orange-400 text-xs"></i>
-                            <span>Types of Flows</span>
-                        </a></li>
-                        <li><a href="#lesson-triggers" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 hover:text-white transition-all duration-300 transform hover:scale-105 text-sm md:text-base">
-                            <i class="fas fa-circle text-orange-400 text-xs"></i>
-                            <span>Triggers & Actions</span>
-                        </a></li>
-                        <li><a href="#lesson-variables" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 hover:text-white transition-all duration-300 transform hover:scale-105 text-sm md:text-base">
-                            <i class="fas fa-circle text-orange-400 text-xs"></i>
-                            <span>Variables</span>
-                        </a></li>
+            <nav class="space-y-6 text-sm">
+                <div class="sidebar-group">
+                    <h3 class="text-xs font-semibold text-orange-400 uppercase tracking-wide mb-2 flex items-center gap-2"><i class="fas fa-star w-4"></i> Basics</h3>
+                    <ul class="space-y-1">
+                        <li><a href="#lesson-intro" class="lesson-link flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-orange-600/90 transition-colors"><i class="fas fa-chevron-right text-orange-400 text-xs"></i> Introduction</a></li>
+                        <li><a href="#lesson-interface" class="lesson-link flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-orange-600/90 transition-colors"><i class="fas fa-chevron-right text-orange-400 text-xs"></i> Interface</a></li>
+                        <li><a href="#lesson-flows" class="lesson-link flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-orange-600/90 transition-colors"><i class="fas fa-chevron-right text-orange-400 text-xs"></i> Types of flows</a></li>
+                        <li><a href="#lesson-triggers" class="lesson-link flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-orange-600/90 transition-colors"><i class="fas fa-chevron-right text-orange-400 text-xs"></i> Triggers &amp; actions</a></li>
+                        <li><a href="#lesson-variables" class="lesson-link flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-orange-600/90 transition-colors"><i class="fas fa-chevron-right text-orange-400 text-xs"></i> Variables</a></li>
                     </ul>
                 </div>
-
-                <!-- Intermediate Section -->
-                <div class="mb-6">
-                    <h3 class="text-xs md:text-sm font-semibold text-orange-300 uppercase mb-3 flex items-center gap-2">
-                        <i class="fas fa-arrow-up w-4"></i>
-                        Intermediate
-                    </h3>
-                    <ul class="space-y-2">
-                        <li><a href="#lesson-conditions" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 hover:text-white transition-all duration-300 transform hover:scale-105 text-sm md:text-base">
-                            <i class="fas fa-code-branch text-orange-300 text-xs"></i>
-                            <span>Conditional Logic</span>
-                        </a></li>
-                        <li><a href="#lesson-loops" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 hover:text-white transition-all duration-300 transform hover:scale-105 text-sm md:text-base">
-                            <i class="fas fa-circle-notch text-orange-300 text-xs"></i>
-                            <span>Loops</span>
-                        </a></li>
-                        <li><a href="#lesson-approvals" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 hover:text-white transition-all duration-300 transform hover:scale-105 text-sm md:text-base">
-                            <i class="fas fa-check-circle text-orange-300 text-xs"></i>
-                            <span>Approvals</span>
-                        </a></li>
-                        <li><a href="#lesson-connectors" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 hover:text-white transition-all duration-300 transform hover:scale-105 text-sm md:text-base">
-                            <i class="fas fa-plug text-orange-300 text-xs"></i>
-                            <span>Connectors</span>
-                        </a></li>
+                <div class="sidebar-group">
+                    <h3 class="text-xs font-semibold text-orange-300 uppercase tracking-wide mb-2 flex items-center gap-2"><i class="fas fa-arrow-trend-up w-4"></i> Intermediate</h3>
+                    <ul class="space-y-1">
+                        <li><a href="#lesson-conditions" class="lesson-link flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-orange-600/90 transition-colors"><i class="fas fa-chevron-right text-orange-300 text-xs"></i> Conditional logic</a></li>
+                        <li><a href="#lesson-loops" class="lesson-link flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-orange-600/90 transition-colors"><i class="fas fa-chevron-right text-orange-300 text-xs"></i> Loops</a></li>
+                        <li><a href="#lesson-approvals" class="lesson-link flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-orange-600/90 transition-colors"><i class="fas fa-chevron-right text-orange-300 text-xs"></i> Approvals</a></li>
+                        <li><a href="#lesson-connectors" class="lesson-link flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-orange-600/90 transition-colors"><i class="fas fa-chevron-right text-orange-300 text-xs"></i> Connectors</a></li>
                     </ul>
                 </div>
-
-                <!-- Advanced Section -->
-                <div>
-                    <h3 class="text-xs md:text-sm font-semibold text-orange-200 uppercase mb-3 flex items-center gap-2">
-                        <i class="fas fa-rocket w-4"></i>
-                        Advanced
-                    </h3>
-                    <ul class="space-y-2">
-                        <li><a href="#lesson-expressions" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 hover:text-white transition-all duration-300 transform hover:scale-105 text-sm md:text-base">
-                            <i class="fas fa-function text-orange-200 text-xs"></i>
-                            <span>Expressions</span>
-                        </a></li>
-                        <li><a href="#lesson-json" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 hover:text-white transition-all duration-300 transform hover:scale-105 text-sm md:text-base">
-                            <i class="fas fa-brackets-curly text-orange-200 text-xs"></i>
-                            <span>JSON</span>
-                        </a></li>
-                        <li><a href="#lesson-api" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 hover:text-white transition-all duration-300 transform hover:scale-105 text-sm md:text-base">
-                            <i class="fas fa-server text-orange-200 text-xs"></i>
-                            <span>API Integration</span>
-                        </a></li>
-                        <li><a href="#lesson-errors" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 hover:text-white transition-all duration-300 transform hover:scale-105 text-sm md:text-base">
-                            <i class="fas fa-shield-exclamation text-orange-200 text-xs"></i>
-                            <span>Error Handling</span>
-                        </a></li>
+                <div class="sidebar-group">
+                    <h3 class="text-xs font-semibold text-orange-200 uppercase tracking-wide mb-2 flex items-center gap-2"><i class="fas fa-rocket w-4"></i> Advanced</h3>
+                    <ul class="space-y-1">
+                        <li><a href="#lesson-expressions" class="lesson-link flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-orange-600/90 transition-colors"><i class="fas fa-chevron-right text-orange-200 text-xs"></i> Expressions</a></li>
+                        <li><a href="#lesson-json" class="lesson-link flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-orange-600/90 transition-colors"><i class="fas fa-chevron-right text-orange-200 text-xs"></i> JSON</a></li>
+                        <li><a href="#lesson-api" class="lesson-link flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-orange-600/90 transition-colors"><i class="fas fa-chevron-right text-orange-200 text-xs"></i> API integration</a></li>
+                        <li><a href="#lesson-errors" class="lesson-link flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-orange-600/90 transition-colors"><i class="fas fa-chevron-right text-orange-200 text-xs"></i> Error handling</a></li>
                     </ul>
                 </div>
             </nav>
         </aside>
     </div>
 
-    <footer class="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-8 md:py-10 border-t-4 border-orange-400">
-        <div class="container mx-auto text-center px-4">
-            <p class="text-sm md:text-base text-orange-300">
-                <i class="fas fa-copyright"></i> 2026 Learn Power Automate. All rights reserved.
-            </p>
+    <footer class="bg-gradient-to-r from-slate-800 to-slate-900 text-white py-8 border-t-4 border-orange-400 mt-auto">
+        <div class="container mx-auto px-4 text-center text-sm text-orange-200">
+            <p>Learning resource for Microsoft Power Automate — not affiliated with Microsoft.</p>
+            <p class="mt-2 text-slate-400">&copy; 2026 Learn Power Automate (educational site).</p>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
     <script src="../js/script.js"></script>
     <script src="../js/learn.js"></script>
 </body>
 </html>
-</content>

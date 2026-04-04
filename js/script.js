@@ -2,7 +2,9 @@
 
 // Smooth scrolling for navbar links
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Page loaded successfully');
+    if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 650, once: true, offset: 40 });
+    }
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

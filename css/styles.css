@@ -1,5 +1,9 @@
 /* Custom styles for Learn Power Automate */
 
+[x-cloak] {
+    display: none !important;
+}
+
 /* Fade-in animation */
 @keyframes fadeIn {
     from {
