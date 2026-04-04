@@ -1,3 +1,7 @@
+# Requires: Repo Settings → Pages → Build and deployment → Source: GitHub Actions.
+# If you use "Deploy from a branch" with Branch main and Folder / (root), GitHub serves
+# unbuilt HTML (dev /src/... script URLs) instead of this workflow's Vite output — the site breaks.
+
 name: Deploy GitHub Pages
 
 on:
