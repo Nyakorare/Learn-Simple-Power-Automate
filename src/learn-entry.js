@@ -6,10 +6,10 @@ import Prism from 'prismjs'
 import 'prismjs/themes/prism-tomorrow.css'
 import 'prismjs/components/prism-javascript.js'
 import 'prismjs/components/prism-json.js'
+import { initBookImmersive } from './learn/book-immersive.js'
 import { initBookView } from './learn/book-view.js'
 import { LEARN_PROGRESS_EVENT, recordLessonVisited, refreshAllLearnProgressUi } from './learn/lesson-progress.js'
 import { LESSON_IDS } from './learn/lesson-manifest.js'
-import { mountLearningPaths } from './learn/render-learning-paths.js'
 import { buildLessonsHtml } from './learn/load-lessons.js'
 import { highlightPrismIn } from './learn/prism-highlight.js'
 import { renderLessonNav } from './learn/render-lesson-nav.js'
@@ -47,11 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
     renderLessonNav(lessonsNav)
   }
 
-  mountLearningPaths(document.getElementById('learning-paths-grid'))
   window.addEventListener(LEARN_PROGRESS_EVENT, refreshAllLearnProgressUi)
   refreshAllLearnProgressUi()
 
   initLearnPage()
+  initBookImmersive()
 
   initBookView(lessonsContent, {
     highlightPrismIn,

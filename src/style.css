@@ -706,3 +706,159 @@
     transform: scale(1.08) rotate(-4deg);
   }
 }
+
+/* Wider book column (learn page) */
+.book-layout-max {
+  max-width: min(88rem, 100%);
+}
+
+@media (min-width: 1536px) {
+  .book-layout-max {
+    max-width: min(96rem, 100%);
+  }
+}
+
+.book-pages--3d .lesson-card .prose {
+  max-width: min(52rem, 100%);
+}
+
+@media (min-width: 1280px) {
+  .book-pages--3d .lesson-card .prose {
+    max-width: min(60rem, 100%);
+  }
+}
+
+@media (min-width: 1536px) {
+  .book-pages--3d .lesson-card .prose {
+    max-width: min(68rem, 100%);
+  }
+}
+
+/* Immersive reading: viewport-sized book, scroll only inside #lessons-content */
+html.learn-immersive,
+body.learn-immersive {
+  height: 100%;
+  overflow: hidden;
+}
+
+body.learn-immersive {
+  min-height: 100dvh;
+}
+
+body.learn-immersive .learn-home-fab {
+  display: none !important;
+}
+
+body.learn-immersive #main-content > section:not(#lesson-modules) {
+  display: none !important;
+}
+
+body.learn-immersive .drawer-content > footer {
+  display: none !important;
+}
+
+body.learn-immersive .drawer.drawer-start {
+  min-height: 100dvh;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+}
+
+body.learn-immersive .drawer-content {
+  min-height: 0 !important;
+  max-height: 100dvh;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex !important;
+  flex-direction: column;
+}
+
+body.learn-immersive #main-content {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  display: flex !important;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+body.learn-immersive #lesson-modules {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  margin-bottom: 0 !important;
+  display: flex !important;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+body.learn-immersive #lesson-modules > .container {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-width: none !important;
+  width: 100%;
+}
+
+body.learn-immersive .book-layout-max {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-width: none !important;
+}
+
+body.learn-immersive .book-page-intro,
+body.learn-immersive .book-3d-decor,
+body.learn-immersive .book-stage__hint {
+  display: none !important;
+}
+
+body.learn-immersive .book-stage-shell--3d {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  perspective: none;
+}
+
+body.learn-immersive .book-stage.book-stage--3d {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: none !important;
+  border-radius: 0.5rem;
+  max-width: none !important;
+  width: 100%;
+}
+
+body.learn-immersive .book-stage-shell--3d:hover .book-stage.book-stage--3d {
+  transform: none !important;
+}
+
+body.learn-immersive #book-stage .book-stage__header {
+  flex-shrink: 0;
+}
+
+body.learn-immersive #lessons-content.book-pages--3d {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.learn-immersive #lessons-content {
+  min-height: 0 !important;
+}
+
+body.learn-immersive .book-pages--3d .lesson-card .prose {
+  max-width: min(72rem, 100%);
+}

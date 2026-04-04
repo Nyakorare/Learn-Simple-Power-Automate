@@ -27,6 +27,16 @@
     <div class="drawer lg:drawer-open">
         <input id="main-nav-drawer" type="checkbox" class="drawer-toggle" aria-label="Open navigation menu" />
         <div class="drawer-content flex flex-col min-h-screen">
+            <header class="hidden lg:flex sticky top-0 z-30 border-b border-base-300 bg-base-100/95 backdrop-blur-sm shadow-sm">
+                <div class="container mx-auto flex w-full items-center gap-3 px-4 py-3">
+                    <img src="./PA.png" alt="" class="site-logo site-logo--navbar shrink-0 rounded-md" width="40" height="40" decoding="async" />
+                    <span class="min-w-0 truncate text-lg font-bold text-base-content">Learn Power Automate</span>
+                    <a href="learn.html" class="btn btn-primary btn-sm ml-auto shrink-0 gap-1.5">
+                        <i class="fas fa-book-open" aria-hidden="true"></i>
+                        Lessons
+                    </a>
+                </div>
+            </header>
             <div class="navbar bg-base-100 shadow-sm lg:hidden sticky top-0 z-30 px-2">
                 <div class="flex-none">
                     <label for="main-nav-drawer" class="btn btn-square btn-ghost drawer-button" aria-label="Open menu">
@@ -62,6 +72,17 @@
                             <i class="fas fa-play"></i>
                             Start learning
                         </a>
+                    </div>
+                </section>
+
+                <section id="learning-progress" class="scroll-mt-24 border-b border-base-300 bg-base-200/50 py-12 md:py-16">
+                    <div class="container mx-auto px-4">
+                        <h2 class="mb-3 flex flex-wrap items-center justify-center gap-3 text-center text-2xl font-bold text-base-content md:text-3xl" data-aos="fade-up" data-aos-duration="600">
+                            <img src="./PA.png" alt="" class="site-logo h-12 w-12 shrink-0 rounded-lg object-contain shadow-sm md:h-14 md:w-14" width="56" height="56" decoding="async" />
+                            Learning progress
+                        </h2>
+                        <p class="mx-auto mb-10 max-w-2xl text-center text-sm text-base-content/75 md:text-base leading-relaxed" data-aos="fade-up" data-aos-delay="60" data-aos-duration="550">These paths match the lesson book. Progress updates when you open a chapter on the <a class="link link-primary font-semibold" href="learn.html">Learn</a> page (this browser only).</p>
+                        <div id="learning-paths-grid-home" class="grid gap-6 md:grid-cols-2 lg:grid-cols-4"></div>
                     </div>
                 </section>
 
@@ -213,6 +234,7 @@
                             <div>
                                 <span class="footer-title text-warning">Quick links</span>
                                 <a href="#hero" class="link link-hover block text-sm">Home</a>
+                                <a href="#learning-progress" class="link link-hover block text-sm">Learning progress</a>
                                 <a href="#features" class="link link-hover block text-sm">Features</a>
                                 <a href="#about-site" class="link link-hover block text-sm">About this site</a>
                                 <a href="learn.html" class="link link-hover block text-sm">Learn</a>
@@ -264,6 +286,7 @@
                 </div>
                 <ul class="space-y-1">
                     <li><a href="#hero" class="flex items-center gap-3 rounded-lg hover:bg-primary hover:text-primary-content"><i class="fas fa-home w-5"></i> Home</a></li>
+                    <li><a href="#learning-progress" class="flex items-center gap-3 rounded-lg hover:bg-primary hover:text-primary-content"><i class="fas fa-chart-line w-5"></i> Learning progress</a></li>
                     <li><a href="#features" class="flex items-center gap-3 rounded-lg hover:bg-primary hover:text-primary-content"><i class="fas fa-star w-5"></i> Features</a></li>
                     <li><a href="#about-site" class="flex items-center gap-3 rounded-lg hover:bg-primary hover:text-primary-content"><i class="fas fa-circle-info w-5"></i> About this site</a></li>
                     <li><a href="learn.html" class="flex items-center gap-3 rounded-lg hover:bg-primary hover:text-primary-content"><i class="fas fa-book w-5"></i> Learn</a></li>

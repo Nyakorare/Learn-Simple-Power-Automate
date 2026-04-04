@@ -2,6 +2,8 @@ import './style.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { LEARN_PROGRESS_EVENT, refreshAllLearnProgressUi } from './learn/lesson-progress.js'
+import { mountLearningPaths } from './learn/render-learning-paths.js'
 import { initThemeToggle } from './theme-toggle.js'
 
 function initSmoothAnchors() {
@@ -21,6 +23,12 @@ function initSmoothAnchors() {
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle()
 
+  mountLearningPaths(document.getElementById('learning-paths-grid-home'), {
+    lessonHrefPrefix: 'learn.html',
+  })
+  window.addEventListener(LEARN_PROGRESS_EVENT, refreshAllLearnProgressUi)
+  refreshAllLearnProgressUi()
+
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   AOS.init({
     duration: reduceMotion ? 0 : 780,
@@ -31,6 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
     disable: reduceMotion,
   })
   initSmoothAnchors()
+
+  try {
+    AOS.refresh()
+  } catch {
+    /* ignore */
+  }
 
   const navDrawer = document.getElementById('main-nav-drawer')
   const sidebar = document.getElementById('sidebar')

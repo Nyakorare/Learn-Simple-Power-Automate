@@ -11,9 +11,14 @@ function escapeHtml(s) {
 
 /**
  * @param {HTMLElement | null} container
+ * @param {{ lessonHrefPrefix?: string }} [options] use `learn.html` on index.html so CTAs open the lesson book
  */
-export function mountLearningPaths(container) {
+export function mountLearningPaths(container, options = {}) {
   if (!container) return
+
+  if (options.lessonHrefPrefix != null) {
+    container.dataset.lessonHrefPrefix = options.lessonHrefPrefix
+  }
 
   container.innerHTML = LEARNING_PATHS.map((p, i) => cardHtml(p, i * 100)).join('')
 

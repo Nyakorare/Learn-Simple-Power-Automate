@@ -24,7 +24,7 @@
     <script type="module" src="/src/learn-entry.js"></script>
 </head>
 <body class="min-h-screen bg-base-200 font-sans antialiased text-base-content">
-    <a href="index.html" class="btn btn-circle btn-secondary fixed bottom-6 left-6 z-[70] shadow-xl transition-transform duration-300 motion-safe:hover:scale-110 motion-safe:active:scale-95" title="Back to home"><i class="fas fa-home text-lg"></i></a>
+    <a href="index.html" class="learn-home-fab btn btn-circle btn-secondary fixed bottom-6 left-6 z-[70] shadow-xl transition-transform duration-300 motion-safe:hover:scale-110 motion-safe:active:scale-95" title="Back to home"><i class="fas fa-home text-lg"></i></a>
     <div class="drawer drawer-start min-h-screen">
         <input id="lessons-drawer" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content flex flex-col bg-base-200 min-w-0">
@@ -34,6 +34,10 @@
                         <i class="fas fa-book" aria-hidden="true"></i>
                         <span class="hidden sm:inline">Contents</span>
                     </label>
+                    <button type="button" id="book-immersive-toggle" data-book-immersive-toggle class="btn btn-ghost btn-sm text-primary-content border border-primary-content/30 shrink-0 gap-2 transition-transform motion-safe:active:scale-95" aria-pressed="false" aria-label="Enter focused reading mode" title="Focused reading—book fills the window; scroll inside the lesson">
+                        <i class="book-immersive-toggle__icon fas fa-expand" aria-hidden="true"></i>
+                        <span class="book-immersive-toggle__label hidden sm:inline">Focus</span>
+                    </button>
                     <h1 class="text-base sm:text-lg md:text-xl font-bold flex items-center gap-2 min-w-0 truncate">
                         <img src="./PA.png" alt="" class="site-logo site-logo--navbar shrink-0" width="40" height="40" decoding="async" />
                         <span class="truncate">Learn Microsoft Power Automate</span>
@@ -95,14 +99,9 @@
                 </div>
             </section>
 
-            <section class="mb-14">
-                <div class="container mx-auto px-4">
-                    <h3 class="text-2xl md:text-3xl font-bold text-center mb-4 flex flex-wrap items-center justify-center gap-2 text-base-content" data-aos="fade-up" data-aos-duration="650">
-                        <i class="fas fa-route text-primary"></i>
-                        Learning paths (topic order)
-                    </h3>
-                    <p class="text-center text-base-content/75 max-w-2xl mx-auto mb-10 text-sm sm:text-base leading-relaxed" data-aos="fade-up" data-aos-delay="60" data-aos-duration="600">Each path is the <strong class="text-base-content">same chapter group</strong> as <strong class="text-base-content">Contents</strong> and the lesson book below. Open a lesson there to advance progress (saved in this browser only).</p>
-                    <div id="learning-paths-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+            <section class="mb-12" data-aos="fade-up" data-aos-duration="600">
+                <div class="container mx-auto px-4 max-w-2xl text-center">
+                    <p class="text-base-content/80 text-sm sm:text-base leading-relaxed"><strong class="text-base-content">Learning progress</strong> by topic path (Basics through Advanced) is on the <a href="index.html#learning-progress" class="link link-primary font-semibold">home page</a>. Opening any lesson here still updates it—stored in this browser only.</p>
                 </div>
             </section>
 
@@ -191,31 +190,39 @@
             </section>
 
             <section id="lesson-modules" class="mb-6 scroll-mt-24">
-                <div class="container mx-auto px-4">
-                    <div class="max-w-3xl mx-auto w-full">
+                <div class="container mx-auto px-3 sm:px-4 lg:px-6">
+                    <div class="book-layout-max mx-auto w-full">
+                    <div class="book-page-intro">
                     <h3 class="text-2xl md:text-3xl font-bold text-base-content mb-3 flex flex-wrap items-center gap-2.5" data-aos="fade-right" data-aos-duration="600">
                         <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/12 text-primary md:h-11 md:w-11" aria-hidden="true">
                             <i class="fas fa-book-open text-lg md:text-xl"></i>
                         </span>
                         <span>All lessons</span>
                     </h3>
-                    <p class="text-base-content/75 mb-6 sm:mb-8 w-full text-sm sm:text-base leading-relaxed text-pretty" data-aos="fade-up" data-aos-delay="60" data-aos-duration="550"><strong class="text-base-content">One lesson at a time</strong> — you read a single chapter in the frame below, not an endless scroll of every topic. Use <strong class="text-base-content">Next page</strong> / <strong class="text-base-content">Previous page</strong>, or open <strong class="text-base-content">Contents</strong> for the slide-out <strong class="text-base-content">table of contents</strong> (works on any screen size). The address bar updates with the lesson so you can bookmark it. Each lesson includes a short <strong class="text-base-content">Quick check</strong> (one random question—refresh for another). <strong class="text-base-content">Learning paths</strong> and the study roadmap are <strong class="text-base-content">above</strong> this section; Microsoft links and the FAQ are <strong class="text-base-content">below</strong>.</p>
+                    <p class="text-base-content/75 mb-6 sm:mb-8 w-full text-sm sm:text-base leading-relaxed text-pretty" data-aos="fade-up" data-aos-delay="60" data-aos-duration="550"><strong class="text-base-content">One lesson at a time</strong> — you read a single chapter in the frame below, not an endless scroll of every topic. Use <strong class="text-base-content">Next page</strong> / <strong class="text-base-content">Previous page</strong>, or open <strong class="text-base-content">Contents</strong> for the slide-out <strong class="text-base-content">table of contents</strong> (works on any screen size). Use <strong class="text-base-content">Focus</strong> in the header or above the lesson for immersive reading (full window, scroll only inside the book). The address bar updates with the lesson so you can bookmark it. Each lesson includes a short <strong class="text-base-content">Quick check</strong> (one random question—refresh for another). <strong class="text-base-content">Learning progress</strong> is on the <a href="index.html#learning-progress" class="link link-primary font-semibold">home page</a>; Microsoft links and the FAQ are <strong class="text-base-content">below</strong>.</p>
+                    </div>
 
                     <div class="book-stage-shell book-stage-shell--3d w-full px-0 sm:px-0">
                         <div id="book-stage" class="book-stage book-stage--3d rounded-xl sm:rounded-2xl border border-base-300/80 bg-base-100 shadow-[0_4px_36px_-10px_rgba(0,0,0,0.14)] overflow-x-hidden overflow-y-visible ring-1 ring-base-300/30">
                             <div class="book-stage__header flex flex-col gap-3 border-b border-base-300/50 bg-gradient-to-r from-base-200/50 to-base-100 px-4 py-3.5 sm:flex-row sm:items-start sm:justify-between sm:gap-5 sm:px-5 sm:py-4">
                                 <div class="flex min-w-0 flex-1 flex-col gap-3 sm:flex-row sm:items-start sm:gap-4">
-                                    <div class="min-w-0 flex-1 text-left">
-                                        <p class="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-primary mb-1">Now reading</p>
-                                        <p id="book-now-reading-title" class="text-base sm:text-lg font-semibold text-base-content leading-snug" aria-live="polite">Introduction</p>
+                                    <div class="flex min-w-0 flex-1 flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+                                        <div class="min-w-0 flex-1 text-left">
+                                            <p class="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-primary mb-1">Now reading</p>
+                                            <p id="book-now-reading-title" class="text-base sm:text-lg font-semibold text-base-content leading-snug" aria-live="polite">Introduction</p>
+                                        </div>
+                                        <button type="button" id="book-immersive-toggle-inbook" data-book-immersive-toggle class="btn btn-sm btn-outline border-base-300/90 text-base-content shrink-0 gap-1.5 self-start sm:self-center sm:mt-0" aria-pressed="false" aria-label="Enter focused reading mode" title="Focused reading—full window; scroll inside the lesson (Esc to exit)">
+                                            <i class="book-immersive-toggle__icon fas fa-expand" aria-hidden="true"></i>
+                                            <span class="book-immersive-toggle__label">Focus</span>
+                                        </button>
                                     </div>
                                     <div class="book-3d-decor mx-auto shrink-0 overflow-hidden rounded-lg border border-base-300/50 bg-base-200/40 shadow-inner sm:mx-0" aria-hidden="true">
                                         <canvas id="book-three-canvas" class="block h-24 w-32 sm:h-[6.75rem] sm:w-[8.5rem]"></canvas>
                                     </div>
                                 </div>
-                                <p class="text-[0.7rem] sm:text-xs text-base-content/60 leading-relaxed sm:max-w-[13.5rem] md:max-w-[15rem] sm:text-right shrink-0 border-t border-base-300/40 pt-3 sm:border-t-0 sm:pt-0 sm:self-center">Tip: use <strong class="font-semibold text-base-content/75">Contents</strong> in the header to jump between chapters. On a phone, scroll the page—the book frame keeps one lesson in focus.</p>
+                                <p class="book-stage__hint text-[0.7rem] sm:text-xs text-base-content/60 leading-relaxed sm:max-w-[13.5rem] md:max-w-[15rem] sm:text-right shrink-0 border-t border-base-300/40 pt-3 sm:border-t-0 sm:pt-0 sm:self-center">Tip: use <strong class="font-semibold text-base-content/75">Contents</strong> to jump between chapters. <strong class="font-semibold text-base-content/75">Focus</strong> fills the window—scroll inside the lesson. Press <kbd class="kbd kbd-sm">Esc</kbd> to exit focus.</p>
                             </div>
-                            <div id="lessons-content" class="book-pages book-pages--3d min-h-[min(60vh,22rem)] sm:min-h-[min(65vh,30rem)] md:min-h-[min(68vh,38rem)] px-3 py-5 sm:px-6 sm:py-8 md:px-10 md:py-10"></div>
+                            <div id="lessons-content" class="book-pages book-pages--3d min-h-[min(60vh,22rem)] sm:min-h-[min(65vh,30rem)] md:min-h-[min(68vh,38rem)] px-3 py-5 sm:px-6 sm:py-8 md:px-10 md:py-10 xl:px-14 2xl:px-16"></div>
                         </div>
                     </div>
                     </div>

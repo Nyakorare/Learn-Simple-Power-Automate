@@ -51,13 +51,15 @@ export function getPathProgress(groupId) {
 /**
  * Next lesson in path order not yet visited, else last lesson in path.
  * @param {string} groupId
+ * @param {string} [pathPrefix] e.g. `learn.html` on the home page so links open the book
  */
-export function continueHrefForPath(groupId) {
+export function continueHrefForPath(groupId, pathPrefix = '') {
   const { lessons } = getPathProgress(groupId)
   const visited = readVisitedIds()
   const next = lessons.find((id) => !visited.has(id))
   const id = next ?? lessons[lessons.length - 1] ?? 'lesson-intro'
-  return `#${id}`
+  const hash = `#${id}`
+  return pathPrefix ? `${pathPrefix}${hash}` : hash
 }
 
 /**
@@ -65,6 +67,7 @@ export function continueHrefForPath(groupId) {
  */
 export function refreshLearningPathCards(root) {
   if (!root) return
+  const pathPrefix = root.dataset.lessonHrefPrefix || ''
   root.querySelectorAll('[data-learning-path]').forEach((card) => {
     const gid = card.getAttribute('data-learning-path')
     if (!gid) return
@@ -79,7 +82,7 @@ export function refreshLearningPathCards(root) {
       label.textContent = total ? `${done} of ${total} lessons opened in the book` : ''
     }
     if (cta instanceof HTMLAnchorElement) {
-      cta.setAttribute('href', continueHrefForPath(gid))
+      cta.setAttribute('href', continueHrefForPath(gid, pathPrefix))
       const complete = total > 0 && done >= total
       const startLabel = cta.getAttribute('data-cta-start') || 'Start'
       if (complete) cta.textContent = 'Review path'
@@ -106,6 +109,7 @@ export function refreshSidebarGroupProgress() {
 }
 
 export function refreshAllLearnProgressUi() {
+  refreshLearningPathCards(document.getElementById('learning-paths-grid-home'))
   refreshLearningPathCards(document.getElementById('learning-paths-grid'))
   refreshSidebarGroupProgress()
 }
