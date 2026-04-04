@@ -1,55 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="powerautomate">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn Power Automate — Topics &amp; lessons</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
-                }
-            }
-        };
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <script defer src="https://unpkg.com/alpinejs@3.13.5/dist/cdn.min.js"></script>
+    <script type="module" src="/src/learn-entry.js"></script>
 </head>
-<body class="bg-slate-50 flex flex-col min-h-screen text-slate-800 font-sans antialiased">
-    <button type="button" id="mobile-sidebar-toggle" class="lg:hidden fixed top-4 right-4 z-50 bg-gradient-to-r from-orange-500 to-orange-600 text-white p-3 rounded-lg shadow-lg" aria-label="Open lessons menu">
-        <i class="fas fa-list text-xl"></i>
-    </button>
+<body class="min-h-screen bg-base-200 font-sans antialiased text-base-content">
+    <a href="index.html" class="btn btn-circle btn-secondary fixed bottom-6 left-6 z-[70] shadow-xl" title="Back to home"><i class="fas fa-home text-lg"></i></a>
+    <label for="lessons-drawer" class="btn btn-primary fixed top-4 right-4 z-[70] shadow-lg gap-2 lg:hidden">
+        <i class="fas fa-list"></i> Lessons
+    </label>
 
-    <button type="button" id="desktop-sidebar-toggle" class="hidden fixed top-4 right-4 z-50 bg-gradient-to-r from-orange-500 to-orange-600 text-white p-3 rounded-lg shadow-lg transition-all duration-300" aria-label="Toggle lessons panel">
-        <i id="sidebar-icon" class="fas fa-list text-xl"></i>
-    </button>
+    <div class="drawer drawer-end lg:drawer-open min-h-screen">
+        <input id="lessons-drawer" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content flex flex-col bg-base-200">
+            <header class="navbar bg-primary text-primary-content shadow-md sticky top-0 z-20 px-4">
+                <div class="navbar-start">
+                    <h1 class="text-lg md:text-xl font-bold flex items-center gap-2">
+                        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                        <span>Learn Microsoft Power Automate</span>
+                    </h1>
+                </div>
+                <div class="navbar-end">
+                    <a href="https://make.powerautomate.com/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm text-primary-content border border-primary-content/30">
+                        <i class="fas fa-external-link-alt"></i> Open Power Automate
+                    </a>
+                </div>
+            </header>
 
-    <a href="../index.html" id="floating-home-btn" class="fixed bottom-6 right-6 z-40 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center" title="Back to home">
-        <i class="fas fa-home text-xl"></i>
-    </a>
-
-    <header class="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 z-20 sticky top-0 shadow-md">
-        <div class="container mx-auto px-4 flex flex-wrap items-center justify-between gap-2">
-            <h1 class="text-lg md:text-2xl font-bold flex items-center gap-2">
-                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-                <span>Learn Microsoft Power Automate</span>
-            </h1>
-            <a href="https://make.powerautomate.com/" target="_blank" rel="noopener noreferrer" class="text-sm font-medium bg-white/15 hover:bg-white/25 px-3 py-1.5 rounded-lg transition-colors inline-flex items-center gap-2">
-                <i class="fas fa-external-link-alt"></i> Open Power Automate
-            </a>
-        </div>
-    </header>
-
-    <div class="flex flex-1 relative">
-        <main id="main-content" class="flex-1 py-8 md:py-12 w-full lg:mr-64 transition-all duration-300">
+            <main id="main-content" class="flex-1 py-8 md:py-12 w-full">
             <section class="bg-gradient-to-br from-orange-500 via-orange-600 to-amber-600 text-white py-14 md:py-20 mb-10 relative overflow-hidden" data-aos="fade-up">
                 <div class="absolute inset-0 bg-white/5"></div>
                 <div class="container mx-auto px-4 relative z-10">
@@ -349,36 +332,30 @@ formatDateTime(utcNow(), 'yyyy-MM-dd')</code></pre>
 
             <section class="mb-16" data-aos="fade-up">
                 <div class="container mx-auto px-4">
-                    <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 text-slate-900 flex flex-wrap items-center justify-center gap-2">
-                        <i class="fas fa-circle-question text-orange-500"></i>
+                    <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 flex flex-wrap items-center justify-center gap-2">
+                        <i class="fas fa-circle-question text-primary"></i>
                         FAQ
                     </h3>
-                    <div class="max-w-3xl mx-auto space-y-3" x-data="{ open: null }">
-                        <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
-                            <button type="button" class="w-full text-left p-5 flex justify-between items-center gap-3 font-semibold text-slate-900 hover:bg-slate-50" @click="open = open === 1 ? null : 1" :aria-expanded="open === 1">
-                                What is Power Automate?
-                                <i class="fas fa-chevron-down text-orange-500 transition-transform shrink-0" :class="open === 1 && 'rotate-180'"></i>
-                            </button>
-                            <div class="px-5 pb-5 text-slate-600 border-t border-slate-100" x-show="open === 1" x-transition x-cloak>
-                                <p class="pt-3">Microsoft’s automation service for connecting apps and services. You design flows that start with a trigger and perform actions using connectors—often with no traditional coding.</p>
+                    <div class="join join-vertical max-w-3xl mx-auto w-full rounded-box overflow-hidden border border-base-300 bg-base-100 shadow-sm">
+                        <div class="collapse collapse-arrow join-item border-base-300 border">
+                            <input type="radio" name="learn-faq" checked="checked" aria-label="Open FAQ item" />
+                            <div class="collapse-title font-semibold">What is Power Automate?</div>
+                            <div class="collapse-content text-base-content/80">
+                                <p>Microsoft’s automation service for connecting apps and services. You design flows that start with a trigger and perform actions using connectors—often with no traditional coding.</p>
                             </div>
                         </div>
-                        <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
-                            <button type="button" class="w-full text-left p-5 flex justify-between items-center gap-3 font-semibold text-slate-900 hover:bg-slate-50" @click="open = open === 2 ? null : 2" :aria-expanded="open === 2">
-                                Do I need to be a developer?
-                                <i class="fas fa-chevron-down text-orange-500 transition-transform shrink-0" :class="open === 2 && 'rotate-180'"></i>
-                            </button>
-                            <div class="px-5 pb-5 text-slate-600 border-t border-slate-100" x-show="open === 2" x-transition x-cloak>
-                                <p class="pt-3">No. Many flows are built visually. Expressions and HTTP actions add power similar to lightweight development—still focused on automation, not building a full app from scratch.</p>
+                        <div class="collapse collapse-arrow join-item border-base-300 border">
+                            <input type="radio" name="learn-faq" aria-label="Open FAQ item" />
+                            <div class="collapse-title font-semibold">Do I need to be a developer?</div>
+                            <div class="collapse-content text-base-content/80">
+                                <p>No. Many flows are built visually. Expressions and HTTP actions add power similar to lightweight development—still focused on automation, not building a full app from scratch.</p>
                             </div>
                         </div>
-                        <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
-                            <button type="button" class="w-full text-left p-5 flex justify-between items-center gap-3 font-semibold text-slate-900 hover:bg-slate-50" @click="open = open === 3 ? null : 3" :aria-expanded="open === 3">
-                                Where do I practice safely?
-                                <i class="fas fa-chevron-down text-orange-500 transition-transform shrink-0" :class="open === 3 && 'rotate-180'"></i>
-                            </button>
-                            <div class="px-5 pb-5 text-slate-600 border-t border-slate-100" x-show="open === 3" x-transition x-cloak>
-                                <p class="pt-3">Use a non-production environment or trial tenant. Avoid pointing experimental flows at production financial or customer systems until you have tested run history, limits, and security.</p>
+                        <div class="collapse collapse-arrow join-item border-base-300 border">
+                            <input type="radio" name="learn-faq" aria-label="Open FAQ item" />
+                            <div class="collapse-title font-semibold">Where do I practice safely?</div>
+                            <div class="collapse-content text-base-content/80">
+                                <p>Use a non-production environment or trial tenant. Avoid pointing experimental flows at production financial or customer systems until you have tested run history, limits, and security.</p>
                             </div>
                         </div>
                     </div>
@@ -386,10 +363,20 @@ formatDateTime(utcNow(), 'yyyy-MM-dd')</code></pre>
             </section>
         </main>
 
-        <aside id="lessons-sidebar" class="fixed right-0 top-0 h-full w-64 max-w-[85vw] bg-gradient-to-b from-slate-800 to-slate-900 text-white p-4 z-40 shadow-xl border-l-4 border-orange-400 overflow-y-auto translate-x-full transition-transform duration-300" aria-label="Lesson navigation">
-            <button type="button" id="mobile-sidebar-close" class="lg:hidden absolute top-4 left-4 text-orange-300 text-2xl" aria-label="Close lessons menu">
-                <i class="fas fa-times"></i>
-            </button>
+        <footer class="footer footer-center bg-neutral text-neutral-content border-t-4 border-primary py-8">
+            <div>
+                <p class="text-sm">Learning resource for Microsoft Power Automate — not affiliated with Microsoft.</p>
+                <p class="text-xs opacity-70">&copy; 2026 Learn Power Automate (educational site).</p>
+            </div>
+        </footer>
+        </div>
+
+        <div class="drawer-side z-40">
+            <label for="lessons-drawer" aria-label="Close lessons menu" class="drawer-overlay lg:hidden"></label>
+            <aside id="lessons-sidebar" class="min-h-full w-64 max-w-[85vw] bg-neutral text-neutral-content p-4 pt-14 lg:pt-4 border-l-4 border-primary overflow-y-auto" aria-label="Lesson navigation">
+            <label for="lessons-drawer" class="btn btn-ghost btn-sm text-warning lg:hidden mb-2 gap-2">
+                <i class="fas fa-times"></i> Close
+            </label>
             <h2 class="text-lg font-bold mb-6 mt-8 lg:mt-0 text-orange-300 flex items-center gap-2">
                 <i class="fas fa-list-check"></i> Lessons
             </h2>
@@ -424,20 +411,7 @@ formatDateTime(utcNow(), 'yyyy-MM-dd')</code></pre>
                 </div>
             </nav>
         </aside>
-    </div>
-
-    <footer class="bg-gradient-to-r from-slate-800 to-slate-900 text-white py-8 border-t-4 border-orange-400 mt-auto">
-        <div class="container mx-auto px-4 text-center text-sm text-orange-200">
-            <p>Learning resource for Microsoft Power Automate — not affiliated with Microsoft.</p>
-            <p class="mt-2 text-slate-400">&copy; 2026 Learn Power Automate (educational site).</p>
         </div>
-    </footer>
-
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
-    <script src="../js/script.js"></script>
-    <script src="../js/learn.js"></script>
+    </div>
 </body>
 </html>

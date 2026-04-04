@@ -25,12 +25,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build static site folder
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install and build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Stage site for Pages
         run: |
           mkdir -p _site
-          cp index.html _site/
-          cp .nojekyll _site/
-          cp -r css js pages _site/
+          cp -r dist/* _site/
+          touch _site/.nojekyll
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

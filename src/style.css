@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+
+@plugin "daisyui/theme" {
+  name: 'powerautomate';
+  default: true;
+  color-scheme: light;
+  --color-primary: oklch(68% 0.19 41);
+  --color-primary-content: oklch(100% 0 0);
+  --color-secondary: oklch(55% 0.15 250);
+  --color-secondary-content: oklch(98% 0.01 250);
+  --color-accent: oklch(78% 0.14 75);
+  --color-accent-content: oklch(30% 0.05 75);
+  --color-neutral: oklch(24% 0.02 260);
+  --color-neutral-content: oklch(96% 0.01 260);
+  --radius-box: 0.75rem;
+}
+
+@plugin "daisyui";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.85s ease-out forwards;
+  opacity: 0;
+}
