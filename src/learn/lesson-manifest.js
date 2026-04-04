@@ -94,3 +94,66 @@ export const NAV_GROUPS = [
     chevronClass: 'text-accent',
   },
 ]
+
+/**
+ * Cards on the learn page: same `groupId` as sidebar / book TOC sections.
+ * Progress = share of lessons in that group you have opened in the book.
+ */
+export const LEARNING_PATHS = [
+  {
+    id: 'basics',
+    groupId: 'basics',
+    title: 'Basics',
+    difficulty: 'Beginner',
+    description: 'Intro, designer, flow types, triggers, variables, licensing.',
+    icon: 'fas fa-seedling',
+    cardBorder: 'border-success/30 border-t-4 border-t-success',
+    iconWrap: 'bg-success/15',
+    iconClass: 'text-success text-xl',
+    progressClass: 'progress-success',
+    btnClass: 'btn-success',
+    ctaStart: 'Start here',
+  },
+  {
+    id: 'flow',
+    groupId: 'flow',
+    title: 'Flow design',
+    difficulty: 'Intermediate',
+    description: 'Conditions, loops, approvals, connectors, testing, limits.',
+    icon: 'fas fa-diagram-project',
+    cardBorder: 'border-info/30 border-t-4 border-t-info',
+    iconWrap: 'bg-info/15',
+    iconClass: 'text-info text-xl',
+    progressClass: 'progress-info',
+    btnClass: 'btn-info',
+    ctaStart: 'Continue',
+  },
+  {
+    id: 'm365',
+    groupId: 'm365',
+    title: 'Microsoft 365',
+    difficulty: 'Intermediate',
+    description: 'SharePoint, Teams, Forms, Dataverse, Power Apps.',
+    icon: 'fas fa-building',
+    cardBorder: 'border-secondary/30 border-t-4 border-t-secondary',
+    iconWrap: 'bg-secondary/15',
+    iconClass: 'text-secondary text-xl',
+    progressClass: 'progress-secondary',
+    btnClass: 'btn-secondary',
+    ctaStart: 'Explore',
+  },
+  {
+    id: 'advanced',
+    groupId: 'advanced',
+    title: 'Advanced',
+    difficulty: 'Advanced',
+    description: 'Expressions, HTTP, child flows, ALM, security, Copilot.',
+    icon: 'fas fa-rocket',
+    cardBorder: 'border-accent/40 border-t-4 border-t-accent',
+    iconWrap: 'bg-accent/20',
+    iconClass: 'text-accent text-xl',
+    progressClass: 'progress-accent',
+    btnClass: 'btn-accent',
+    ctaStart: 'Go deeper',
+  },
+]

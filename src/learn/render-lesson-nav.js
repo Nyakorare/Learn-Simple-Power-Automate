@@ -28,9 +28,10 @@ export function renderLessonNav(navEl) {
 
     return `
       <div class="sidebar-group" data-aos="fade-left" data-aos-delay="${groupIndex * 100}" data-aos-duration="520" data-aos-offset="0">
-        <h3 class="text-xs font-semibold ${group.headerClass} uppercase tracking-wide mb-2 flex items-center gap-2">
+        <h3 class="text-xs font-semibold ${group.headerClass} uppercase tracking-wide mb-1 flex items-center gap-2">
           <i class="${group.icon} w-4"></i> ${escapeHtml(group.label)}
         </h3>
+        <p class="text-[0.65rem] text-neutral-content/55 mb-2 leading-tight" data-nav-group-progress="${escapeHtml(group.id)}" aria-live="polite"></p>
         <ul class="space-y-0.5">${links}</ul>
       </div>`
   }).join('')

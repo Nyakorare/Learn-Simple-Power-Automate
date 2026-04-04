@@ -97,52 +97,12 @@
 
             <section class="mb-14">
                 <div class="container mx-auto px-4">
-                    <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 flex flex-wrap items-center justify-center gap-2 text-base-content" data-aos="fade-up" data-aos-duration="650">
+                    <h3 class="text-2xl md:text-3xl font-bold text-center mb-4 flex flex-wrap items-center justify-center gap-2 text-base-content" data-aos="fade-up" data-aos-duration="650">
                         <i class="fas fa-route text-primary"></i>
                         Learning paths (topic order)
                     </h3>
-                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <article class="card bg-base-100 border border-success/30 border-t-4 border-t-success shadow-lg path-card-lift overflow-hidden" data-aos="zoom-in-up" data-aos-delay="0">
-                            <div class="card-body">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <div class="bg-success/15 p-3 rounded-box"><i class="fas fa-seedling text-success text-xl"></i></div>
-                                    <h4 class="card-title text-base">Basics</h4>
-                                </div>
-                                <p class="text-base-content/80 text-sm">Intro, designer, flow types, triggers, variables, licensing.</p>
-                                <a href="#lesson-intro" class="btn btn-success btn-block mt-2">Start here</a>
-                            </div>
-                        </article>
-                        <article class="card bg-base-100 border border-info/30 border-t-4 border-t-info shadow-lg path-card-lift overflow-hidden" data-aos="zoom-in-up" data-aos-delay="100">
-                            <div class="card-body">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <div class="bg-info/15 p-3 rounded-box"><i class="fas fa-diagram-project text-info text-xl"></i></div>
-                                    <h4 class="card-title text-base">Flow design</h4>
-                                </div>
-                                <p class="text-base-content/80 text-sm">Conditions, loops, approvals, connectors, testing, limits.</p>
-                                <a href="#lesson-conditions" class="btn btn-info btn-block mt-2">Continue</a>
-                            </div>
-                        </article>
-                        <article class="card bg-base-100 border border-secondary/30 border-t-4 border-t-secondary shadow-lg path-card-lift overflow-hidden" data-aos="zoom-in-up" data-aos-delay="200">
-                            <div class="card-body">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <div class="bg-secondary/15 p-3 rounded-box"><i class="fas fa-building text-secondary text-xl"></i></div>
-                                    <h4 class="card-title text-base">Microsoft 365</h4>
-                                </div>
-                                <p class="text-base-content/80 text-sm">SharePoint, Teams, Forms, Dataverse, Power Apps.</p>
-                                <a href="#lesson-sharepoint" class="btn btn-secondary btn-block mt-2">Explore</a>
-                            </div>
-                        </article>
-                        <article class="card bg-base-100 border border-accent/40 border-t-4 border-t-accent shadow-lg path-card-lift overflow-hidden" data-aos="zoom-in-up" data-aos-delay="300">
-                            <div class="card-body">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <div class="bg-accent/20 p-3 rounded-box"><i class="fas fa-rocket text-accent text-xl"></i></div>
-                                    <h4 class="card-title text-base">Advanced</h4>
-                                </div>
-                                <p class="text-base-content/80 text-sm">Expressions, HTTP, child flows, ALM, security, governance.</p>
-                                <a href="#lesson-expressions" class="btn btn-accent btn-block mt-2 text-accent-content">Go deeper</a>
-                            </div>
-                        </article>
-                    </div>
+                    <p class="text-center text-base-content/75 max-w-2xl mx-auto mb-10 text-sm sm:text-base leading-relaxed" data-aos="fade-up" data-aos-delay="60" data-aos-duration="600">Each path is the <strong class="text-base-content">same chapter group</strong> as <strong class="text-base-content">Contents</strong> and the lesson book below. Open a lesson there to advance progress (saved in this browser only).</p>
+                    <div id="learning-paths-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
                 </div>
             </section>
 
@@ -241,16 +201,21 @@
                     </h3>
                     <p class="text-base-content/75 mb-6 sm:mb-8 w-full text-sm sm:text-base leading-relaxed text-pretty" data-aos="fade-up" data-aos-delay="60" data-aos-duration="550"><strong class="text-base-content">One lesson at a time</strong> — you read a single chapter in the frame below, not an endless scroll of every topic. Use <strong class="text-base-content">Next page</strong> / <strong class="text-base-content">Previous page</strong>, or open <strong class="text-base-content">Contents</strong> for the slide-out <strong class="text-base-content">table of contents</strong> (works on any screen size). The address bar updates with the lesson so you can bookmark it. Each lesson includes a short <strong class="text-base-content">Quick check</strong> (one random question—refresh for another). <strong class="text-base-content">Learning paths</strong> and the study roadmap are <strong class="text-base-content">above</strong> this section; Microsoft links and the FAQ are <strong class="text-base-content">below</strong>.</p>
 
-                    <div class="book-stage-shell w-full px-0 sm:px-0">
-                        <div id="book-stage" class="book-stage rounded-xl sm:rounded-2xl border border-base-300/80 bg-base-100 shadow-[0_4px_36px_-10px_rgba(0,0,0,0.14)] overflow-x-hidden overflow-y-visible ring-1 ring-base-300/30">
-                            <div class="book-stage__header flex flex-col gap-3 border-b border-base-300/50 bg-gradient-to-r from-base-200/50 to-base-100 px-4 py-3.5 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-5 sm:py-4">
-                                <div class="min-w-0 flex-1 text-left">
-                                    <p class="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-primary mb-1">Now reading</p>
-                                    <p id="book-now-reading-title" class="text-base sm:text-lg font-semibold text-base-content leading-snug" aria-live="polite">Introduction</p>
+                    <div class="book-stage-shell book-stage-shell--3d w-full px-0 sm:px-0">
+                        <div id="book-stage" class="book-stage book-stage--3d rounded-xl sm:rounded-2xl border border-base-300/80 bg-base-100 shadow-[0_4px_36px_-10px_rgba(0,0,0,0.14)] overflow-x-hidden overflow-y-visible ring-1 ring-base-300/30">
+                            <div class="book-stage__header flex flex-col gap-3 border-b border-base-300/50 bg-gradient-to-r from-base-200/50 to-base-100 px-4 py-3.5 sm:flex-row sm:items-start sm:justify-between sm:gap-5 sm:px-5 sm:py-4">
+                                <div class="flex min-w-0 flex-1 flex-col gap-3 sm:flex-row sm:items-start sm:gap-4">
+                                    <div class="min-w-0 flex-1 text-left">
+                                        <p class="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-primary mb-1">Now reading</p>
+                                        <p id="book-now-reading-title" class="text-base sm:text-lg font-semibold text-base-content leading-snug" aria-live="polite">Introduction</p>
+                                    </div>
+                                    <div class="book-3d-decor mx-auto shrink-0 overflow-hidden rounded-lg border border-base-300/50 bg-base-200/40 shadow-inner sm:mx-0" aria-hidden="true">
+                                        <canvas id="book-three-canvas" class="block h-24 w-32 sm:h-[6.75rem] sm:w-[8.5rem]"></canvas>
+                                    </div>
                                 </div>
-                                <p class="text-[0.7rem] sm:text-xs text-base-content/60 leading-relaxed sm:max-w-[13.5rem] md:max-w-[15rem] sm:text-right shrink-0 border-t border-base-300/40 pt-3 sm:border-t-0 sm:pt-0">Tip: use <strong class="font-semibold text-base-content/75">Contents</strong> in the header to jump between chapters. On a phone, scroll the page—the book frame keeps one lesson in focus.</p>
+                                <p class="text-[0.7rem] sm:text-xs text-base-content/60 leading-relaxed sm:max-w-[13.5rem] md:max-w-[15rem] sm:text-right shrink-0 border-t border-base-300/40 pt-3 sm:border-t-0 sm:pt-0 sm:self-center">Tip: use <strong class="font-semibold text-base-content/75">Contents</strong> in the header to jump between chapters. On a phone, scroll the page—the book frame keeps one lesson in focus.</p>
                             </div>
-                            <div id="lessons-content" class="book-pages min-h-[min(60vh,22rem)] sm:min-h-[min(65vh,30rem)] md:min-h-[min(68vh,38rem)] px-3 py-5 sm:px-6 sm:py-8 md:px-10 md:py-10"></div>
+                            <div id="lessons-content" class="book-pages book-pages--3d min-h-[min(60vh,22rem)] sm:min-h-[min(65vh,30rem)] md:min-h-[min(68vh,38rem)] px-3 py-5 sm:px-6 sm:py-8 md:px-10 md:py-10"></div>
                         </div>
                     </div>
                     </div>

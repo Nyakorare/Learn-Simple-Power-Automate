@@ -433,6 +433,87 @@
   display: none !important;
 }
 
+/* 3D reader: perspective on shell, tilt on stage, paper-like lesson pane */
+.book-stage-shell--3d {
+  perspective: 2000px;
+  perspective-origin: 50% 35%;
+}
+
+.book-stage.book-stage--3d {
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .book-stage.book-stage--3d {
+    transform: rotateX(2.2deg) rotateY(-4deg) translateZ(0);
+  }
+
+  .book-stage-shell--3d:hover .book-stage.book-stage--3d {
+    transform: rotateX(1deg) rotateY(-1.5deg) translateZ(0);
+  }
+}
+
+.book-pages--3d {
+  position: relative;
+  perspective: 1500px;
+  transform-style: preserve-3d;
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklch, var(--color-base-300) 40%, transparent) 0%,
+    transparent 9%,
+    transparent 91%,
+    color-mix(in oklch, var(--color-base-300) 40%, transparent) 100%
+  );
+}
+
+/* Outgoing page lifts out of flow so the next page can replace it without layout jump */
+.book-pages--3d.book-pages--is-turning article.lesson-card.book-page--leaving {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  max-width: 100%;
+  z-index: 2;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.book-pages--3d::before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    120% 80% at 50% 0%,
+    color-mix(in oklch, var(--color-base-100) 75%, var(--color-warning) 8%) 0%,
+    transparent 55%
+  );
+  opacity: 0.5;
+}
+
+.book-3d-decor canvas {
+  vertical-align: middle;
+}
+
+.book-pages--3d .lesson-card.book-page--active {
+  transform: translateZ(0);
+  background: linear-gradient(
+    168deg,
+    color-mix(in oklch, var(--color-base-100) 82%, var(--color-warning) 9%) 0%,
+    var(--color-base-100) 38%,
+    var(--color-base-100) 100%
+  );
+  box-shadow:
+    inset 28px 0 52px -36px oklch(0% 0 0 / 0.16),
+    inset -3px 0 0 color-mix(in oklch, var(--color-base-300) 45%, transparent),
+    0 16px 48px -14px oklch(0% 0 0 / 0.16);
+  border-color: color-mix(in oklch, var(--color-base-300) 70%, transparent);
+}
+
 .book-stage {
   max-width: 100%;
 }
@@ -444,24 +525,49 @@
   }
 }
 
-.book-page--active {
-  animation: bookPageIn 0.4s ease-out both;
+/* Page turn: outgoing flips away (spine left); incoming flips in from the right */
+.book-page--leaving {
+  animation: bookPageOut 0.42s cubic-bezier(0.4, 0, 0.72, 0.22) forwards;
+  transform-origin: left center;
+  backface-visibility: hidden;
+}
+
+.book-page--entering {
+  animation: bookPageFlipIn 0.5s cubic-bezier(0.2, 0.85, 0.28, 1) both;
+  transform-origin: right center;
+  backface-visibility: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .book-page--active {
+  .book-page--leaving,
+  .book-page--entering {
     animation: none;
   }
 }
 
-@keyframes bookPageIn {
+@keyframes bookPageOut {
+  from {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0) rotateY(0deg);
+  }
+  to {
+    opacity: 0;
+    filter: blur(1px);
+    transform: translateX(-5%) rotateY(-76deg);
+  }
+}
+
+@keyframes bookPageFlipIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    filter: blur(1px);
+    transform: translateX(6%) rotateY(26deg);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    filter: blur(0);
+    transform: translateX(0) rotateY(0deg);
   }
 }
 
