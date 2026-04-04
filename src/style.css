@@ -102,6 +102,163 @@
   max-width: 2rem;
 }
 
+/* Theme toggle: pill button with crossfading sun/moon icons */
+.theme-toggle-btn {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border-radius: 9999px;
+  cursor: pointer;
+  border: 1px solid color-mix(in oklch, var(--color-base-content) 14%, transparent);
+  background: linear-gradient(
+    160deg,
+    color-mix(in oklch, var(--color-base-100) 88%, var(--color-base-300)) 0%,
+    color-mix(in oklch, var(--color-base-200) 75%, var(--color-base-100)) 100%
+  );
+  box-shadow:
+    0 1px 2px oklch(0% 0 0 / 0.06),
+    inset 0 1px 0 oklch(100% 0 0 / 0.45);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  border-color: color-mix(in oklch, var(--color-primary) 35%, var(--color-base-content));
+  box-shadow:
+    0 4px 14px oklch(0% 0 0 / 0.1),
+    inset 0 1px 0 oklch(100% 0 0 / 0.5);
+}
+
+.theme-toggle-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .theme-toggle-btn:hover {
+    transform: scale(1.06);
+  }
+
+  .theme-toggle-btn:active {
+    transform: scale(0.96);
+  }
+}
+
+.theme-toggle-btn__icons {
+  position: relative;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.theme-toggle-moon,
+.theme-toggle-sun {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1;
+  color: color-mix(in oklch, var(--color-base-content) 88%, transparent);
+  transition:
+    opacity 0.28s ease,
+    transform 0.28s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+.theme-toggle-sun {
+  color: color-mix(in oklch, var(--color-warning) 55%, var(--color-base-content));
+}
+
+.theme-toggle-icon--inactive {
+  opacity: 0;
+  transform: scale(0.5) rotate(-40deg);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle-btn,
+  .theme-toggle-moon,
+  .theme-toggle-sun {
+    transition: none;
+  }
+
+  .theme-toggle-btn:hover,
+  .theme-toggle-btn:active {
+    transform: none;
+  }
+}
+
+/* Learn page — navbar on primary gradient */
+.theme-toggle-btn--primary-nav {
+  width: 2.625rem;
+  height: 2.625rem;
+  border-color: color-mix(in oklch, var(--color-primary-content) 38%, transparent);
+  background: linear-gradient(
+    165deg,
+    color-mix(in oklch, var(--color-primary-content) 18%, transparent) 0%,
+    color-mix(in oklch, var(--color-primary-content) 8%, transparent) 100%
+  );
+  box-shadow:
+    0 2px 10px oklch(0% 0 0 / 0.12),
+    inset 0 1px 0 color-mix(in oklch, var(--color-primary-content) 22%, transparent);
+}
+
+.theme-toggle-btn--primary-nav:hover {
+  border-color: color-mix(in oklch, var(--color-primary-content) 65%, transparent);
+  background: linear-gradient(
+    165deg,
+    color-mix(in oklch, var(--color-primary-content) 26%, transparent) 0%,
+    color-mix(in oklch, var(--color-primary-content) 12%, transparent) 100%
+  );
+}
+
+.theme-toggle-btn--primary-nav .theme-toggle-moon,
+.theme-toggle-btn--primary-nav .theme-toggle-sun {
+  color: var(--color-primary-content);
+}
+
+.theme-toggle-btn--primary-nav .theme-toggle-sun {
+  color: color-mix(in oklch, var(--color-warning) 75%, var(--color-primary-content));
+}
+
+/* Drawer / dark sidebars (warning accent) */
+.theme-toggle-btn--drawer {
+  width: 2.375rem;
+  height: 2.375rem;
+  border-color: color-mix(in oklch, var(--color-warning) 45%, transparent);
+  background: linear-gradient(
+    165deg,
+    color-mix(in oklch, var(--color-warning) 14%, transparent) 0%,
+    color-mix(in oklch, var(--color-neutral-content) 6%, transparent) 100%
+  );
+  box-shadow: inset 0 1px 0 color-mix(in oklch, var(--color-warning) 12%, transparent);
+}
+
+.theme-toggle-btn--drawer:hover {
+  border-color: color-mix(in oklch, var(--color-warning) 70%, transparent);
+  background: linear-gradient(
+    165deg,
+    color-mix(in oklch, var(--color-warning) 22%, transparent) 0%,
+    color-mix(in oklch, var(--color-neutral-content) 8%, transparent) 100%
+  );
+}
+
+.theme-toggle-btn--drawer .theme-toggle-moon,
+.theme-toggle-btn--drawer .theme-toggle-sun {
+  color: color-mix(in oklch, var(--color-warning) 92%, var(--color-neutral-content));
+}
+
+.theme-toggle-btn--drawer .theme-toggle-sun {
+  color: var(--color-warning);
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

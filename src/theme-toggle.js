@@ -46,8 +46,8 @@ export function syncToggleButtons(mode) {
     const moon = btn.querySelector('.theme-toggle-moon')
     const sun = btn.querySelector('.theme-toggle-sun')
     if (moon && sun) {
-      moon.classList.toggle('hidden', dark)
-      sun.classList.toggle('hidden', !dark)
+      moon.classList.toggle('theme-toggle-icon--inactive', dark)
+      sun.classList.toggle('theme-toggle-icon--inactive', !dark)
     }
   })
 }

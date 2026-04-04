@@ -38,9 +38,11 @@
                     <span class="font-bold text-lg truncate">Learn Power Automate</span>
                 </div>
                 <div class="navbar-end shrink-0">
-                    <button type="button" class="btn btn-ghost btn-square btn-sm sm:btn-md text-base-content" data-theme-toggle aria-label="Switch to dark mode" title="Dark mode">
-                        <i class="fas fa-moon theme-toggle-moon text-lg" aria-hidden="true"></i>
-                        <i class="fas fa-sun theme-toggle-sun text-lg hidden text-warning" aria-hidden="true"></i>
+                    <button type="button" class="theme-toggle-btn" data-theme-toggle aria-label="Switch to dark mode" title="Dark mode">
+                        <span class="theme-toggle-btn__icons" aria-hidden="true">
+                            <i class="fas fa-moon theme-toggle-moon" aria-hidden="true"></i>
+                            <i class="fas fa-sun theme-toggle-sun theme-toggle-icon--inactive" aria-hidden="true"></i>
+                        </span>
                     </button>
                 </div>
             </div>
@@ -249,9 +251,11 @@
                         <span class="truncate">Nav</span>
                     </span>
                     <div class="flex items-center gap-1 shrink-0">
-                        <button type="button" class="btn btn-ghost btn-square btn-sm text-warning border border-warning/25 hover:bg-warning/10" data-theme-toggle aria-label="Switch to dark mode" title="Dark mode">
-                            <i class="fas fa-moon theme-toggle-moon" aria-hidden="true"></i>
-                            <i class="fas fa-sun theme-toggle-sun hidden" aria-hidden="true"></i>
+                        <button type="button" class="theme-toggle-btn theme-toggle-btn--drawer" data-theme-toggle aria-label="Switch to dark mode" title="Dark mode">
+                            <span class="theme-toggle-btn__icons" aria-hidden="true">
+                                <i class="fas fa-moon theme-toggle-moon" aria-hidden="true"></i>
+                                <i class="fas fa-sun theme-toggle-sun theme-toggle-icon--inactive" aria-hidden="true"></i>
+                            </span>
                         </button>
                         <label for="main-nav-drawer" class="btn btn-ghost btn-sm btn-circle lg:hidden text-warning" aria-label="Close menu">
                             <i class="fas fa-times text-xl"></i>
