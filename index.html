@@ -25,25 +25,26 @@
             </div>
 
             <div id="main-content" class="flex-1 flex flex-col">
-                <section id="hero" class="hero min-h-[22rem] bg-gradient-to-br from-primary via-orange-500 to-amber-500 text-primary-content relative overflow-hidden" data-aos="fade-up">
+                <section id="hero" class="hero min-h-[22rem] bg-gradient-to-br from-primary via-orange-500 to-amber-500 text-primary-content relative overflow-hidden">
                     <div class="absolute w-64 h-64 md:w-80 md:h-80 rounded-full bg-warning/60 blur-3xl -top-16 -left-20 pointer-events-none opacity-50 motion-safe:animate-[orbFloat_14s_ease-in-out_infinite] motion-reduce:animate-none" aria-hidden="true"></div>
                     <div class="absolute w-80 h-80 md:w-[28rem] md:h-[28rem] rounded-full bg-accent/50 blur-3xl top-1/3 -right-24 md:-right-32 pointer-events-none opacity-40 motion-safe:animate-[orbFloat2_18s_ease-in-out_infinite] motion-safe:[animation-delay:-4s] motion-reduce:animate-none" aria-hidden="true"></div>
                     <div class="hero-content text-center z-10 px-4 py-12 md:py-20 relative">
-                        <h1 class="text-3xl md:text-5xl font-bold mb-4 md:mb-6 flex flex-wrap items-center justify-center gap-3 drop-shadow-sm">
+                        <h1 class="text-3xl md:text-5xl font-bold mb-4 md:mb-6 flex flex-wrap items-center justify-center gap-3 drop-shadow-sm" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-out-quart">
                             <i class="fas fa-bolt text-3xl md:text-4xl text-warning motion-safe:animate-[iconFloat_3.5s_ease-in-out_infinite] motion-reduce:animate-none" aria-hidden="true"></i>
                             Learn Power Automate
                         </h1>
-                        <p class="text-lg md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto opacity-95">Discover how to automate your workflows, integrate apps, and boost productivity with Microsoft Power Automate. No coding required!</p>
-                        <a href="learn.html" class="btn btn-lg bg-base-100 text-primary border-0 hover:bg-base-200 gap-2 shadow-lg hover:scale-105 active:scale-95 transition-transform duration-300">
+                        <p class="text-lg md:text-xl mb-4 md:mb-5 max-w-2xl mx-auto opacity-95" data-aos="fade-up" data-aos-delay="120" data-aos-duration="750">Discover how to automate your workflows, integrate apps, and boost productivity with Microsoft Power Automate—visual design first, with optional expressions when you need them.</p>
+                        <p class="text-sm md:text-base mb-6 md:mb-8 max-w-2xl mx-auto opacity-90 border border-primary-content/25 rounded-xl px-4 py-3 bg-primary-content/5" data-aos="fade-up" data-aos-delay="180" data-aos-duration="650"><strong class="font-semibold">Fan-made guide.</strong> This site is an independent learning outline for Power Automate, created by <strong class="font-semibold">Glenn R. Galbadores</strong>. It is not affiliated with, endorsed by, or sponsored by Microsoft.</p>
+                        <a href="learn.html" class="btn btn-lg bg-base-100 text-primary border-0 hover:bg-base-200 gap-2 shadow-lg hover:scale-105 active:scale-95 transition-transform duration-300" data-aos="zoom-in" data-aos-delay="240" data-aos-duration="600">
                             <i class="fas fa-play"></i>
                             Start learning
                         </a>
                     </div>
                 </section>
 
-                <section id="features" class="py-12 md:py-20 bg-base-100" data-aos="fade-up">
+                <section id="features" class="py-12 md:py-20 bg-base-100">
                     <div class="container mx-auto px-4">
-                        <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Why choose Power Automate?</h2>
+                        <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12" data-aos="fade-up" data-aos-duration="600">Why choose Power Automate?</h2>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                             <div class="card bg-base-200 shadow-md hover:shadow-xl path-card-lift border border-base-300" data-aos="zoom-in-up" data-aos-delay="0">
                                 <div class="card-body items-center text-center">
@@ -70,9 +71,37 @@
                     </div>
                 </section>
 
-                <section class="py-12 md:py-20 bg-base-200" data-aos="fade-up">
+                <section id="about-site" class="py-12 md:py-20 bg-base-200 scroll-mt-24">
+                    <div class="container mx-auto px-4 max-w-4xl">
+                        <h2 class="text-2xl md:text-3xl font-bold text-center mb-3 md:mb-4" data-aos="fade-up" data-aos-duration="600">About this site</h2>
+                        <p class="text-center text-base-content/75 mb-10 max-w-2xl mx-auto text-sm md:text-base" data-aos="fade-up" data-aos-delay="60" data-aos-duration="600">Who built it, what it is (and isn’t), and how the pages are put together under the hood.</p>
+                        <div class="grid gap-6 md:grid-cols-2">
+                            <div class="card bg-base-100 border border-base-300 shadow-md" data-aos="fade-up" data-aos-delay="0">
+                                <div class="card-body">
+                                    <h3 class="card-title text-primary text-lg"><i class="fas fa-user-pen" aria-hidden="true"></i> Creator &amp; disclaimer</h3>
+                                    <p class="text-sm text-base-content/85 leading-relaxed">Made by <strong>Glenn R. Galbadores</strong> as a <strong>fan-made</strong>, educational resource to help people learn Microsoft Power Automate. It summarizes topics and points you to official Microsoft docs and the real designer to practice. It is <strong>not</strong> official Microsoft content.</p>
+                                </div>
+                            </div>
+                            <div class="card bg-base-100 border border-base-300 shadow-md" data-aos="fade-up" data-aos-delay="100">
+                                <div class="card-body">
+                                    <h3 class="card-title text-primary text-lg"><i class="fas fa-code" aria-hidden="true"></i> How the coding works (basics)</h3>
+                                    <ul class="list-disc pl-5 text-sm text-base-content/85 space-y-2 leading-relaxed">
+                                        <li><strong>Static site</strong> — HTML pages and assets; no server-side login or database on this project.</li>
+                                        <li><strong>Vite</strong> bundles CSS/JS for fast local dev and production builds.</li>
+                                        <li><strong>Tailwind CSS</strong> + <strong>DaisyUI</strong> handle layout, components, and themes.</li>
+                                        <li><strong>Vanilla JavaScript modules</strong> load lesson HTML fragments, build the “book” view, run small UI helpers (search, quizzes, syntax highlighting), and optional animation (AOS).</li>
+                                        <li>Lesson text lives in small <strong>HTML files</strong> per topic; the learn page stitches them together in order.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-center text-xs text-base-content/60 mt-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="140">To develop locally: clone the repo, run <code class="px-1 rounded bg-base-300/80 text-base-content/90">npm install</code> then <code class="px-1 rounded bg-base-300/80 text-base-content/90">npm run dev</code>. Production output is static files from <code class="px-1 rounded bg-base-300/80 text-base-content/90">npm run build</code> (suitable for GitHub Pages or any static host).</p>
+                    </div>
+                </section>
+
+                <section class="py-12 md:py-20 bg-base-100">
                     <div class="container mx-auto px-4">
-                        <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">How Power Automate works</h2>
+                        <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12" data-aos="fade-up" data-aos-duration="600">How Power Automate works</h2>
                         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
                             <div class="text-center" data-aos="fade-up" data-aos-delay="0">
                                 <div class="badge badge-lg badge-primary badge-outline w-16 h-16 p-0 text-2xl font-bold rounded-full mb-4">1</div>
@@ -98,9 +127,9 @@
                     </div>
                 </section>
 
-                <section class="py-12 md:py-20 bg-base-100" data-aos="fade-up">
+                <section class="py-12 md:py-20 bg-base-100">
                     <div class="container mx-auto px-4">
-                        <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Common use cases</h2>
+                        <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12" data-aos="fade-up" data-aos-duration="600">Common use cases</h2>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                             <div class="card bg-info/10 border border-info/20 shadow-sm hover:shadow-md path-card-lift" data-aos="flip-left" data-aos-delay="0">
                                 <div class="card-body items-center text-center">
@@ -134,13 +163,13 @@
                     </div>
                 </section>
 
-                <section id="cta" class="py-12 md:py-16 bg-gradient-to-r from-primary to-orange-600 text-primary-content" data-aos="fade-up">
+                <section id="cta" class="py-12 md:py-16 bg-gradient-to-r from-primary to-orange-600 text-primary-content">
                     <div class="container mx-auto text-center px-4">
-                        <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 flex flex-wrap items-center justify-center gap-2">
-                            <i class="fas fa-star"></i> Ready to get started?
+                        <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 flex flex-wrap items-center justify-center gap-2" data-aos="fade-right" data-aos-duration="650">
+                            <i class="fas fa-star motion-safe:animate-[iconFloat_3.5s_ease-in-out_infinite] motion-reduce:animate-none" aria-hidden="true"></i> Ready to get started?
                         </h2>
-                        <p class="text-base md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto opacity-95">Use this guide alongside Microsoft Learn and the Power Automate designer to build real automations at your own pace.</p>
-                        <a href="learn.html" class="btn btn-lg bg-base-100 text-primary border-0 gap-2 hover:scale-105 active:scale-95 transition-transform duration-300 shadow-md">
+                        <p class="text-base md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto opacity-95" data-aos="fade-up" data-aos-delay="80" data-aos-duration="600">Use this guide alongside Microsoft Learn and the Power Automate designer to build real automations at your own pace.</p>
+                        <a href="learn.html" class="btn btn-lg bg-base-100 text-primary border-0 gap-2 hover:scale-105 active:scale-95 transition-transform duration-300 shadow-md" data-aos="zoom-in" data-aos-delay="160" data-aos-duration="550">
                             <i class="fas fa-arrow-right"></i>
                             Open lessons
                         </a>
@@ -152,12 +181,14 @@
                         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 w-full max-w-6xl text-left">
                             <div>
                                 <span class="footer-title text-warning">Learn Power Automate</span>
-                                <p class="text-sm opacity-80 mt-2">Master workflow automation with Microsoft Power Automate. No coding required.</p>
+                                <p class="text-sm opacity-80 mt-2">Fan-made learning outline for Microsoft Power Automate—practice in your own tenant alongside official docs.</p>
+                                <p class="text-xs opacity-70 mt-3">Created by <strong class="text-neutral-content/90">Glenn R. Galbadores</strong>. Not affiliated with Microsoft.</p>
                             </div>
                             <div>
                                 <span class="footer-title text-warning">Quick links</span>
                                 <a href="#hero" class="link link-hover block text-sm">Home</a>
                                 <a href="#features" class="link link-hover block text-sm">Features</a>
+                                <a href="#about-site" class="link link-hover block text-sm">About this site</a>
                                 <a href="learn.html" class="link link-hover block text-sm">Learn</a>
                                 <a href="#cta" class="link link-hover block text-sm">Get started</a>
                             </div>
@@ -177,8 +208,8 @@
                             </div>
                         </div>
                         <div class="divider before:bg-neutral-content/20 after:bg-neutral-content/20"></div>
-                        <p class="text-sm text-warning text-center">
-                            <i class="fas fa-copyright"></i> 2026 Learn Power Automate. All rights reserved.
+                        <p class="text-sm text-warning text-center max-w-xl mx-auto leading-relaxed">
+                            <i class="fas fa-copyright" aria-hidden="true"></i> 2026 Glenn R. Galbadores — fan-made “Learn Power Automate” educational site. Microsoft and Power Automate are trademarks of Microsoft Corporation.
                         </p>
                     </div>
                 </footer>
@@ -199,6 +230,7 @@
                 <ul class="space-y-1">
                     <li><a href="#hero" class="flex items-center gap-3 rounded-lg hover:bg-primary hover:text-primary-content"><i class="fas fa-home w-5"></i> Home</a></li>
                     <li><a href="#features" class="flex items-center gap-3 rounded-lg hover:bg-primary hover:text-primary-content"><i class="fas fa-star w-5"></i> Features</a></li>
+                    <li><a href="#about-site" class="flex items-center gap-3 rounded-lg hover:bg-primary hover:text-primary-content"><i class="fas fa-circle-info w-5"></i> About this site</a></li>
                     <li><a href="learn.html" class="flex items-center gap-3 rounded-lg hover:bg-primary hover:text-primary-content"><i class="fas fa-book w-5"></i> Learn</a></li>
                     <li><a href="#cta" class="flex items-center gap-3 rounded-lg hover:bg-primary hover:text-primary-content"><i class="fas fa-rocket w-5"></i> Get started</a></li>
                 </ul>

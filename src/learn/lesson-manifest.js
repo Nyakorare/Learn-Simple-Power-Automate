@@ -61,6 +61,9 @@ export const LESSON_NAV_ITEMS = [
   { id: 'lesson-copilot', slug: 'copilot', group: 'advanced', title: 'Copilot' },
 ]
 
+/** All lesson anchor ids (for book view + routing). */
+export const LESSON_IDS = new Set(LESSON_NAV_ITEMS.map((l) => l.id))
+
 export const NAV_GROUPS = [
   {
     id: 'basics',

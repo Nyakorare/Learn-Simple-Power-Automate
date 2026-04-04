@@ -10,19 +10,19 @@
     <script type="module" src="/src/learn-entry.js"></script>
 </head>
 <body class="min-h-screen bg-base-200 font-sans antialiased text-base-content">
-    <a href="index.html" class="btn btn-circle btn-secondary fixed bottom-6 left-6 z-[70] shadow-xl" title="Back to home"><i class="fas fa-home text-lg"></i></a>
-    <label for="lessons-drawer" class="btn btn-primary fixed top-4 right-4 z-[70] shadow-lg gap-2 lg:hidden">
-        <i class="fas fa-list"></i> Lessons
-    </label>
-
-    <div class="drawer drawer-end lg:drawer-open min-h-screen">
+    <a href="index.html" class="btn btn-circle btn-secondary fixed bottom-6 left-6 z-[70] shadow-xl transition-transform duration-300 motion-safe:hover:scale-110 motion-safe:active:scale-95" title="Back to home"><i class="fas fa-home text-lg"></i></a>
+    <div class="drawer drawer-start min-h-screen">
         <input id="lessons-drawer" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content flex flex-col bg-base-200">
-            <header class="navbar bg-primary text-primary-content shadow-md sticky top-0 z-20 px-4">
-                <div class="navbar-start">
-                    <h1 class="text-lg md:text-xl font-bold flex items-center gap-2">
-                        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-                        <span>Learn Microsoft Power Automate</span>
+        <div class="drawer-content flex flex-col bg-base-200 min-w-0">
+            <header class="navbar bg-primary text-primary-content shadow-md sticky top-0 z-20 px-3 sm:px-4">
+                <div class="navbar-start gap-2 flex-1 min-w-0">
+                    <label id="toc-toggle-label" for="lessons-drawer" tabindex="0" class="btn btn-ghost btn-sm text-primary-content border border-primary-content/30 shrink-0 gap-2 transition-transform motion-safe:active:scale-95" title="Show or hide table of contents" aria-expanded="false" aria-controls="lessons-sidebar">
+                        <i class="fas fa-book" aria-hidden="true"></i>
+                        <span class="hidden sm:inline">Contents</span>
+                    </label>
+                    <h1 class="text-base sm:text-lg md:text-xl font-bold flex items-center gap-2 min-w-0 truncate">
+                        <i class="fas fa-graduation-cap shrink-0" aria-hidden="true"></i>
+                        <span class="truncate">Learn Microsoft Power Automate</span>
                     </h1>
                 </div>
                 <div class="navbar-end">
@@ -33,30 +33,30 @@
             </header>
 
             <main id="main-content" class="flex-1 py-8 md:py-12 w-full">
-            <section class="bg-gradient-to-br from-primary via-orange-600 to-amber-500 text-primary-content py-14 md:py-20 mb-10 relative overflow-hidden" data-aos="fade-up">
+            <section class="bg-gradient-to-br from-primary via-orange-600 to-amber-500 text-primary-content py-14 md:py-20 mb-10 relative overflow-hidden">
                 <div class="absolute w-56 h-56 md:w-72 md:h-72 rounded-full bg-warning/50 blur-3xl -top-12 -left-16 pointer-events-none opacity-45 motion-safe:animate-[orbFloat_14s_ease-in-out_infinite] motion-reduce:animate-none" aria-hidden="true"></div>
                 <div class="absolute w-72 h-72 md:w-96 md:h-96 rounded-full bg-accent/40 blur-3xl top-1/4 -right-20 pointer-events-none opacity-35 motion-safe:animate-[orbFloat2_18s_ease-in-out_infinite] motion-safe:[animation-delay:-4s] motion-reduce:animate-none" aria-hidden="true"></div>
                 <div class="absolute inset-0 bg-white/5"></div>
                 <div class="container mx-auto px-4 relative z-10">
                     <div class="max-w-4xl mx-auto text-center">
-                        <h2 class="text-3xl md:text-5xl font-bold mb-5 flex flex-wrap items-center justify-center gap-3 drop-shadow-sm">
+                        <h2 class="text-3xl md:text-5xl font-bold mb-5 flex flex-wrap items-center justify-center gap-3 drop-shadow-sm" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-out-quart">
                             <i class="fas fa-bolt text-3xl md:text-4xl text-warning motion-safe:animate-[iconFloat_3.5s_ease-in-out_infinite] motion-reduce:animate-none" aria-hidden="true"></i>
                             Hands-on topics for Power Automate
                         </h2>
-                        <p class="text-lg md:text-xl mb-8 opacity-95 max-w-2xl mx-auto">Everything here is about learning Power Automate: flows, triggers, connectors, Dataverse, Teams, and how to build reliable automations in Microsoft 365 and beyond.</p>
-                        <div class="flex flex-wrap justify-center gap-2 mb-10">
-                            <span class="badge badge-lg badge-outline border-primary-content/40 text-primary-content gap-1">Cloud flows</span>
-                            <span class="badge badge-lg badge-outline border-primary-content/40 text-primary-content gap-1">Dataverse</span>
-                            <span class="badge badge-lg badge-outline border-primary-content/40 text-primary-content gap-1">Approvals</span>
-                            <span class="badge badge-lg badge-outline border-primary-content/40 text-primary-content gap-1">Connectors</span>
-                            <span class="badge badge-lg badge-outline border-primary-content/40 text-primary-content gap-1">ALM</span>
-                            <span class="badge badge-lg badge-outline border-primary-content/40 text-primary-content gap-1">Governance</span>
+                        <p class="text-lg md:text-xl mb-8 opacity-95 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100" data-aos-duration="750">Everything here is about learning Power Automate: flows, triggers, connectors, Dataverse, Teams, and how to build reliable automations in Microsoft 365 and beyond.</p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-10" data-aos="fade-up" data-aos-delay="180" data-aos-duration="650">
+                            <span class="badge badge-lg badge-outline border-primary-content/40 text-primary-content gap-1 motion-safe:transition-transform motion-safe:duration-300 motion-safe:hover:scale-105">Cloud flows</span>
+                            <span class="badge badge-lg badge-outline border-primary-content/40 text-primary-content gap-1 motion-safe:transition-transform motion-safe:duration-300 motion-safe:hover:scale-105">Dataverse</span>
+                            <span class="badge badge-lg badge-outline border-primary-content/40 text-primary-content gap-1 motion-safe:transition-transform motion-safe:duration-300 motion-safe:hover:scale-105">Approvals</span>
+                            <span class="badge badge-lg badge-outline border-primary-content/40 text-primary-content gap-1 motion-safe:transition-transform motion-safe:duration-300 motion-safe:hover:scale-105">Connectors</span>
+                            <span class="badge badge-lg badge-outline border-primary-content/40 text-primary-content gap-1 motion-safe:transition-transform motion-safe:duration-300 motion-safe:hover:scale-105">ALM</span>
+                            <span class="badge badge-lg badge-outline border-primary-content/40 text-primary-content gap-1 motion-safe:transition-transform motion-safe:duration-300 motion-safe:hover:scale-105">Governance</span>
                         </div>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="zoom-in" data-aos-delay="260" data-aos-duration="600">
                             <a href="#lesson-intro" class="btn btn-lg bg-base-100 text-primary border-0 gap-2 shadow-lg hover:scale-105 active:scale-95 transition-transform duration-300">
                                 <i class="fas fa-book-open"></i> Start with the basics
                             </a>
-                            <a href="#lesson-modules" class="btn btn-lg btn-outline border-2 border-primary-content text-primary-content hover:bg-primary-content/15 gap-2">
+                            <a href="#lesson-modules" class="btn btn-lg btn-outline border-2 border-primary-content text-primary-content hover:bg-primary-content/15 gap-2 transition-transform duration-300 hover:scale-105 active:scale-95">
                                 <i class="fas fa-list"></i> Jump to all lessons
                             </a>
                         </div>
@@ -68,15 +68,15 @@
                 <div class="container mx-auto px-4">
                     <div class="max-w-2xl mx-auto relative">
                         <label for="lesson-search" class="sr-only">Search lesson titles</label>
-                        <input type="search" id="lesson-search" autocomplete="off" placeholder="Filter lessons in the sidebar (e.g. Dataverse, Teams, child flow, DLP)…" class="input input-bordered input-primary w-full pl-12 h-14 text-base shadow-md focus:shadow-lg transition-shadow bg-base-100">
+                        <input type="search" id="lesson-search" autocomplete="off" placeholder="Filter the table of contents (e.g. Dataverse, Teams, child flow, DLP)…" class="input input-bordered input-primary w-full pl-12 h-14 text-base shadow-md focus:shadow-lg transition-shadow bg-base-100">
                         <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-base-content/40 pointer-events-none" aria-hidden="true"></i>
                     </div>
                 </div>
             </section>
 
-            <section class="mb-14" data-aos="fade-up">
+            <section class="mb-14">
                 <div class="container mx-auto px-4">
-                    <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 flex flex-wrap items-center justify-center gap-2 text-base-content">
+                    <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 flex flex-wrap items-center justify-center gap-2 text-base-content" data-aos="fade-up" data-aos-duration="650">
                         <i class="fas fa-route text-primary"></i>
                         Learning paths (topic order)
                     </h3>
@@ -144,9 +144,9 @@
                 </div>
             </section>
 
-            <section class="mb-14" data-aos="fade-up">
+            <section class="mb-14">
                 <div class="container mx-auto px-4">
-                    <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 flex flex-wrap items-center justify-center gap-2 text-base-content">
+                    <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 flex flex-wrap items-center justify-center gap-2 text-base-content" data-aos="fade-up" data-aos-duration="650">
                         <i class="fas fa-lightbulb text-warning"></i>
                         Quick start in the real product
                     </h3>
@@ -209,12 +209,23 @@
                 </div>
             </section>
 
-            <section id="lesson-modules" class="mb-6 scroll-mt-24" data-aos="fade-up">
+            <section id="lesson-modules" class="mb-6 scroll-mt-24">
                 <div class="container mx-auto px-4">
-                    <h3 class="text-2xl md:text-3xl font-bold text-base-content mb-2">All lessons</h3>
-                    <p class="text-base-content/75 mb-10 max-w-3xl">Each section maps to concepts you will use in the Power Automate designer. Follow links to Microsoft Learn for deeper modules.</p>
+                    <h3 class="text-2xl md:text-3xl font-bold text-base-content mb-2 flex flex-wrap items-center gap-2" data-aos="fade-right" data-aos-duration="600">
+                        <i class="fas fa-book-open text-primary hidden sm:inline" aria-hidden="true"></i>
+                        All lessons
+                    </h3>
+                    <p class="text-base-content/75 mb-6 sm:mb-8 max-w-3xl text-sm sm:text-base leading-relaxed" data-aos="fade-up" data-aos-delay="60" data-aos-duration="550"><strong class="text-base-content">One lesson at a time</strong> — you are not scrolling through every topic at once. Use <strong class="text-base-content">Next page</strong> / <strong class="text-base-content">Previous page</strong>, or open <strong class="text-base-content">Contents</strong> in the header to show the slide-out <strong class="text-base-content">table of contents</strong> (toggle it on or off on any screen size). Each lesson ends with a short <strong class="text-base-content">Quick check</strong> (a random multiple-choice question from a small pool—refresh the page if you want another). The URL updates so you can bookmark a page. Scroll further down for learning paths, Microsoft links, and FAQ.</p>
 
-                    <div id="lessons-content"></div>
+                    <div class="book-stage-shell mx-auto w-full max-w-3xl px-0 sm:px-1">
+                        <div id="book-stage" class="book-stage rounded-xl sm:rounded-2xl border border-base-300/80 bg-base-100 shadow-[0_4px_36px_-10px_rgba(0,0,0,0.14)] overflow-hidden ring-1 ring-base-300/30">
+                            <div class="book-stage__header flex flex-col gap-2 border-b border-base-300/50 bg-gradient-to-r from-base-200/50 to-base-100 px-3 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-5 sm:py-3">
+                                <p class="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-primary shrink-0">Now reading</p>
+                                <p class="text-[0.7rem] sm:text-xs text-base-content/55 leading-snug">Responsive layout: narrow columns and touch-friendly controls on small viewports; wider reading column on large screens. The table of contents opens from <strong class="font-semibold text-base-content/70">Contents</strong> when you need it.</p>
+                            </div>
+                            <div id="lessons-content" class="book-pages min-h-[min(68vh,28rem)] sm:min-h-[min(70vh,34rem)] md:min-h-[min(72vh,42rem)] px-3 py-5 sm:px-6 sm:py-8 md:px-10 md:py-10"></div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -238,48 +249,43 @@
                 </div>
             </section>
 
-            <section class="mb-16" data-aos="fade-up">
+            <section id="learn-faq" class="mb-16 scroll-mt-24">
                 <div class="container mx-auto px-4">
-                    <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 flex flex-wrap items-center justify-center gap-2">
-                        <i class="fas fa-circle-question text-primary"></i>
+                    <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 flex flex-wrap items-center justify-center gap-2 text-base-content" data-aos="fade-up" data-aos-duration="600">
+                        <i class="fas fa-circle-question text-primary" aria-hidden="true"></i>
                         FAQ
                     </h3>
-                    <div class="join join-vertical max-w-3xl mx-auto w-full rounded-box overflow-hidden border border-base-300 bg-base-100 shadow-sm">
-                        <div class="collapse collapse-arrow join-item border-base-300 border">
-                            <input type="radio" name="learn-faq" checked="checked" aria-label="Open FAQ item" />
-                            <div class="collapse-title font-semibold">What is Power Automate?</div>
-                            <div class="collapse-content text-base-content/80">
+                    <div class="faq-list max-w-3xl mx-auto w-full flex flex-col gap-2">
+                        <details class="collapse collapse-arrow faq-item bg-base-100 border border-base-300 rounded-box shadow-sm">
+                            <summary class="collapse-title font-semibold text-base" id="faq-q1">What is Power Automate?</summary>
+                            <div class="collapse-content text-base-content/85 text-sm sm:text-base leading-relaxed">
                                 <p>Microsoft’s automation service for connecting apps and services. You design flows that start with a trigger and perform actions using connectors—often with no traditional coding.</p>
                             </div>
-                        </div>
-                        <div class="collapse collapse-arrow join-item border-base-300 border">
-                            <input type="radio" name="learn-faq" aria-label="Open FAQ item" />
-                            <div class="collapse-title font-semibold">Do I need to be a developer?</div>
-                            <div class="collapse-content text-base-content/80">
+                        </details>
+                        <details class="collapse collapse-arrow faq-item bg-base-100 border border-base-300 rounded-box shadow-sm">
+                            <summary class="collapse-title font-semibold text-base" id="faq-q2">Do I need to be a developer?</summary>
+                            <div class="collapse-content text-base-content/85 text-sm sm:text-base leading-relaxed">
                                 <p>No. Many flows are built visually. Expressions and HTTP actions add power similar to lightweight development—still focused on automation, not building a full app from scratch.</p>
                             </div>
-                        </div>
-                        <div class="collapse collapse-arrow join-item border-base-300 border">
-                            <input type="radio" name="learn-faq" aria-label="Open FAQ item" />
-                            <div class="collapse-title font-semibold">Where do I practice safely?</div>
-                            <div class="collapse-content text-base-content/80">
+                        </details>
+                        <details class="collapse collapse-arrow faq-item bg-base-100 border border-base-300 rounded-box shadow-sm">
+                            <summary class="collapse-title font-semibold text-base" id="faq-q3">Where do I practice safely?</summary>
+                            <div class="collapse-content text-base-content/85 text-sm sm:text-base leading-relaxed">
                                 <p>Use a non-production environment or trial tenant. Avoid pointing experimental flows at production financial or customer systems until you have tested run history, limits, and security.</p>
                             </div>
-                        </div>
-                        <div class="collapse collapse-arrow join-item border-base-300 border">
-                            <input type="radio" name="learn-faq" aria-label="Open FAQ item" />
-                            <div class="collapse-title font-semibold">SharePoint vs Dataverse—which should I use?</div>
-                            <div class="collapse-content text-base-content/80">
+                        </details>
+                        <details class="collapse collapse-arrow faq-item bg-base-100 border border-base-300 rounded-box shadow-sm">
+                            <summary class="collapse-title font-semibold text-base" id="faq-q4">SharePoint vs Dataverse—which should I use?</summary>
+                            <div class="collapse-content text-base-content/85 text-sm sm:text-base leading-relaxed">
                                 <p>SharePoint lists and libraries are great for documents and lightweight tracking tied to sites. Dataverse fits structured business data, relationships, security roles, and model-driven apps. Many real solutions use both.</p>
                             </div>
-                        </div>
-                        <div class="collapse collapse-arrow join-item border-base-300 border">
-                            <input type="radio" name="learn-faq" aria-label="Open FAQ item" />
-                            <div class="collapse-title font-semibold">How do I avoid throttling and slow flows?</div>
-                            <div class="collapse-content text-base-content/80">
-                                <p>Filter early, paginate large lists, avoid unnecessary <em>Apply to each</em> nesting, tune concurrency, and cache or batch calls. See the <strong>Limits &amp; pagination</strong> lesson for patterns.</p>
+                        </details>
+                        <details class="collapse collapse-arrow faq-item bg-base-100 border border-base-300 rounded-box shadow-sm">
+                            <summary class="collapse-title font-semibold text-base" id="faq-q5">How do I avoid throttling and slow flows?</summary>
+                            <div class="collapse-content text-base-content/85 text-sm sm:text-base leading-relaxed">
+                                <p>Filter early, paginate large lists, avoid unnecessary <em>Apply to each</em> nesting, tune concurrency, and cache or batch calls. See the <a href="#lesson-limits" class="link link-primary font-medium">Limits &amp; pagination</a> lesson for patterns.</p>
                             </div>
-                        </div>
+                        </details>
                     </div>
                 </div>
             </section>
@@ -287,22 +293,32 @@
 
         <footer class="footer footer-center bg-neutral text-neutral-content border-t-4 border-primary py-8">
             <div>
-                <p class="text-sm">Learning resource for Microsoft Power Automate — not affiliated with Microsoft.</p>
-                <p class="text-xs opacity-70">&copy; 2026 Learn Power Automate (educational site).</p>
+                <p class="text-sm">Fan-made lessons for Microsoft Power Automate — not affiliated with Microsoft.</p>
+                <p class="text-xs opacity-80 mt-2">By <strong>Glenn R. Galbadores</strong>. See <a href="index.html#about-site" class="link link-warning">About this site</a> on the home page for how the project is built.</p>
+                <p class="text-xs opacity-70 mt-2">&copy; 2026 Glenn R. Galbadores — educational site.</p>
             </div>
         </footer>
         </div>
 
         <div class="drawer-side z-40">
-            <label for="lessons-drawer" aria-label="Close lessons menu" class="drawer-overlay lg:hidden"></label>
-            <aside id="lessons-sidebar" class="min-h-full w-64 max-w-[85vw] bg-neutral text-neutral-content p-4 pt-14 lg:pt-4 border-l-4 border-primary overflow-y-auto" aria-label="Lesson navigation">
-            <label for="lessons-drawer" class="btn btn-ghost btn-sm text-warning lg:hidden mb-2 gap-2">
-                <i class="fas fa-times"></i> Close
-            </label>
-            <h2 class="text-lg font-bold mb-6 mt-8 lg:mt-0 text-warning flex items-center gap-2">
-                <i class="fas fa-list-check"></i> Lessons
-            </h2>
-            <nav id="lessons-nav" class="space-y-5 text-sm" aria-label="Lesson list"></nav>
+            <label for="lessons-drawer" class="drawer-overlay cursor-pointer" aria-label="Close table of contents"></label>
+            <aside id="lessons-sidebar" class="toc-sidebar flex min-h-full w-[min(100%,18rem)] max-w-[min(88vw,20rem)] flex-col bg-neutral text-neutral-content border-r-4 border-primary shadow-[4px_0_24px_-8px_rgba(0,0,0,0.12)]" aria-label="Table of contents">
+                <div class="toc-sidebar__head sticky top-0 z-10 flex items-start justify-between gap-2 border-b border-neutral-content/15 bg-neutral px-4 py-3">
+                    <div class="min-w-0 pt-0.5">
+                        <p class="text-[0.65rem] font-bold uppercase tracking-widest text-warning/90">In this book</p>
+                        <h2 class="text-base font-bold text-warning flex items-center gap-2">
+                            <i class="fas fa-list-ul shrink-0" aria-hidden="true"></i>
+                            <span class="leading-tight">Table of contents</span>
+                        </h2>
+                    </div>
+                    <label for="lessons-drawer" class="btn btn-ghost btn-square btn-sm text-warning shrink-0 border border-warning/25 hover:bg-warning/10" title="Close table of contents" aria-label="Close table of contents">
+                        <i class="fas fa-times text-lg" aria-hidden="true"></i>
+                    </label>
+                </div>
+                <div class="toc-sidebar__body flex-1 overflow-y-auto overscroll-contain px-4 py-4">
+                    <p class="text-xs text-neutral-content/65 mb-4 leading-snug">Use <strong class="text-neutral-content/90">Contents</strong> in the header to show or hide this panel. Click the dimmed area outside or press <kbd class="kbd kbd-sm">Esc</kbd> to close.</p>
+                    <nav id="lessons-nav" class="space-y-5 text-sm pb-8" aria-label="Lesson list"></nav>
+                </div>
         </aside>
         </div>
     </div>

@@ -18,12 +18,14 @@ function initSmoothAnchors() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   AOS.init({
-    duration: 780,
+    duration: reduceMotion ? 0 : 780,
     easing: 'ease-out-quart',
     once: true,
     offset: 72,
     anchorPlacement: 'top-bottom',
+    disable: reduceMotion,
   })
   initSmoothAnchors()
 
