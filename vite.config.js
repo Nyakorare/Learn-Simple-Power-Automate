@@ -5,28 +5,26 @@ import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-/** GitHub Actions sets GITHUB_REPOSITORY=owner/repo for project Pages subpath. */
-const repoSlug = process.env.GITHUB_REPOSITORY?.split('/')?.[1]
-const baseForBuild =
-  process.env.GITHUB_PAGES === 'true' && repoSlug ? `/${repoSlug}/` : './'
-
-/** Makes ./PA.png and page links resolve under /repo/ even when the URL omits a trailing slash. */
-function htmlBaseTagPlugin(baseHref) {
+/**
+ * Vite adds crossorigin to built tags; with rel=stylesheet that can make some browsers
+ * treat the load as a CORS request. GitHub Pages static CSS is same-origin, so drop it.
+ * (Keeps crossorigin on e.g. fonts.gstatic.com preconnect in source HTML.)
+ */
+function stripBuiltAssetCrossorigin() {
   return {
-    name: 'html-base-tag',
+    name: 'strip-built-asset-crossorigin',
     transformIndexHtml(html) {
-      if (!baseHref || baseHref === './') return html
-      return html.replace(
-        '<meta charset="UTF-8">',
-        `<meta charset="UTF-8">\n    <base href="${baseHref}">`,
-      )
+      return html
+        .replace(/<link rel="stylesheet" crossorigin /g, '<link rel="stylesheet" ')
+        .replace(/<link rel="modulepreload" crossorigin /g, '<link rel="modulepreload" ')
+        .replace(/<script type="module" crossorigin /g, '<script type="module" ')
     },
   }
 }
 
 export default defineConfig(({ command }) => ({
-  base: command === 'serve' ? '/' : baseForBuild,
-  plugins: [tailwindcss(), htmlBaseTagPlugin(command === 'serve' ? './' : baseForBuild)],
+  base: command === 'serve' ? '/' : './',
+  plugins: [tailwindcss(), stripBuiltAssetCrossorigin()],
   build: {
     cssCodeSplit: false,
     rollupOptions: {

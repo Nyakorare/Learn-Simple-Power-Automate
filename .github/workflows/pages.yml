@@ -1,6 +1,4 @@
-# Requires: Repo Settings → Pages → Build and deployment → Source: GitHub Actions.
-# If you use "Deploy from a branch" with Branch main and Folder / (root), GitHub serves
-# unbuilt HTML (dev /src/... script URLs) instead of this workflow's Vite output — the site breaks.
+# Requires: Repo Settings → Pages → Source: GitHub Actions (not “Deploy from a branch” / root).
 
 name: Deploy GitHub Pages
 
@@ -36,8 +34,6 @@ jobs:
           cache: 'npm'
 
       - name: Install and build
-        env:
-          GITHUB_PAGES: 'true'
         run: |
           npm ci
           npm run build
