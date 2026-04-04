@@ -18,7 +18,13 @@ function initSmoothAnchors() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  AOS.init({ duration: 650, once: true, offset: 40 })
+  AOS.init({
+    duration: 780,
+    easing: 'ease-out-quart',
+    once: true,
+    offset: 72,
+    anchorPlacement: 'top-bottom',
+  })
   initSmoothAnchors()
 
   const navDrawer = document.getElementById('main-nav-drawer')
@@ -33,15 +39,4 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fade-in')
-        }
-      })
-    },
-    { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-  )
-  document.querySelectorAll('section').forEach((section) => observer.observe(section))
 })

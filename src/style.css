@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@plugin '@tailwindcss/typography';
+
 @plugin "daisyui/theme" {
   name: 'powerautomate';
   default: true;
@@ -23,6 +25,12 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .path-card-lift:hover {
+    transform: none;
+  }
+}
+
 [x-cloak] {
   display: none !important;
 }
@@ -41,4 +49,58 @@
 .animate-fade-in {
   animation: fadeInUp 0.85s ease-out forwards;
   opacity: 0;
+}
+
+@keyframes orbFloat {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate(12px, -18px) scale(1.08);
+    opacity: 0.55;
+  }
+}
+
+@keyframes orbFloat2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translate(-16px, 14px) scale(1.12);
+    opacity: 0.45;
+  }
+}
+
+@keyframes iconFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.path-card-lift {
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.35s ease;
+}
+
+.path-card-lift:hover {
+  transform: translateY(-6px);
+}
+
+.lesson-card pre {
+  border-radius: var(--radius-box);
+  overflow-x: auto;
+  margin-top: 0.75rem;
+}
+
+.lesson-card code {
+  font-size: 0.8125rem;
 }
