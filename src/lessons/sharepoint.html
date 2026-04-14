@@ -1,8 +1,22 @@
 <article id="lesson-sharepoint" class="lesson-card card rounded-2xl border border-base-300/80 bg-base-100/95 backdrop-blur-sm shadow-md hover:shadow-xl hover:-translate-y-1 mb-10 scroll-mt-28 p-6 md:p-8" data-aos="fade-up">
   <h4 class="card-title text-lg md:text-xl text-primary mb-3 flex items-center gap-2"><i class="fab fa-microsoft"></i> SharePoint patterns</h4>
   <div class="prose prose-sm md:prose-base max-w-3xl prose-headings:text-base-content prose-p:text-base-content/90 prose-li:text-base-content/90 prose-strong:text-base-content prose-a:text-primary">
-    <p>Common triggers: <strong>When an item is created or modified</strong> on a list or library. Use <strong>Get items</strong> with a filter to narrow rows; handle <strong>attachments</strong> in a separate loop.</p>
-    <p>Prefer dedicated lists for automation-friendly columns; avoid fragile folder paths when you can use metadata instead.</p>
+    <p>Microsoft Lists is built on SharePoint, so in Power Automate you usually use SharePoint triggers and actions to automate List data.</p>
+    <h5>Core Microsoft Lists flow</h5>
+    <ul>
+      <li><strong>Trigger:</strong> <strong>When an item is created</strong> or <strong>When an item is created or modified</strong>.</li>
+      <li><strong>Get data:</strong> use <strong>Get item</strong> or <strong>Get items</strong> with <strong>Filter Query</strong> and <strong>Top Count</strong>.</li>
+      <li><strong>Use data:</strong> run conditions (priority, status, due date), calculate values, or route to approvals.</li>
+      <li><strong>Write back:</strong> use <strong>Update item</strong> to stamp outcomes like ApprovalStatus, Owner, or CompletedDate.</li>
+    </ul>
+    <h5>Good list design for automation</h5>
+    <ul>
+      <li>Use stable internal column names and keep required fields intentional.</li>
+      <li>Prefer metadata columns over folder-path logic where possible.</li>
+      <li>Store multi-step flow state with columns like <strong>ProcessingState</strong> or <strong>LastFlowRunUtc</strong>.</li>
+    </ul>
+    <h5>Common pattern: get data, shape it, then send</h5>
+    <p>Example: get all open tasks due in 3 days, filter to high priority, create an HTML table, then send a Teams or email digest to owners. This helps learners connect retrieval, transformation, and delivery in one flow.</p>
     <p class="text-sm"><a href="https://learn.microsoft.com/power-automate/sharepoint-overview" target="_blank" rel="noopener noreferrer">SharePoint + Power Automate</a></p>
   </div>
 </article>

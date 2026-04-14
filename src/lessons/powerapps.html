@@ -1,7 +1,21 @@
 <article id="lesson-powerapps" class="lesson-card card rounded-2xl border border-base-300/80 bg-base-100/95 backdrop-blur-sm shadow-md hover:shadow-xl hover:-translate-y-1 mb-10 scroll-mt-28 p-6 md:p-8" data-aos="fade-up">
   <h4 class="card-title text-lg md:text-xl text-primary mb-3 flex items-center gap-2"><i class="fas fa-mobile-screen-button"></i> Power Apps &amp; instant flows</h4>
   <div class="prose prose-sm md:prose-base max-w-3xl prose-headings:text-base-content prose-p:text-base-content/90 prose-li:text-base-content/90 prose-strong:text-base-content prose-a:text-primary">
-    <p><strong>Power Apps</strong> can start an <strong>instant cloud flow</strong> and pass inputs. In the flow, use the Power Apps trigger and return values with <strong>Respond to PowerApps</strong> when you need output back to the app.</p>
+    <p><strong>Power Apps</strong> can call instant cloud flows to execute logic that should live outside the app (approvals, integrations, notifications).</p>
+    <h5>App-to-flow pattern</h5>
+    <ul>
+      <li><strong>Input from app:</strong> pass selected record ID, user email, or form fields from Power Apps to the flow.</li>
+      <li><strong>Get related data:</strong> use SharePoint <strong>Get item</strong> / <strong>Get items</strong> to retrieve the full context.</li>
+      <li><strong>Process:</strong> validate, branch, call approvals, or enrich data.</li>
+      <li><strong>Return result:</strong> use <strong>Respond to Power Apps</strong> with success/error message and key output values.</li>
+    </ul>
+    <h5>Beginner lessons to include</h5>
+    <ul>
+      <li>How to trigger a flow from a button and pass parameters safely.</li>
+      <li>How to send back messages that Power Apps can display to the user.</li>
+      <li>How to avoid duplicate submissions with a status flag in SharePoint or Dataverse.</li>
+    </ul>
+    <p>This is one of the most useful integrations for learning "get data, take action, and return feedback" in a single user experience.</p>
     <p class="text-sm"><a href="https://learn.microsoft.com/power-automate/triggers-introduction#power-apps-trigger" target="_blank" rel="noopener noreferrer">Power Apps trigger</a></p>
   </div>
 </article>

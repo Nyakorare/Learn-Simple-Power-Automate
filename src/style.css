@@ -722,6 +722,19 @@
   max-width: min(52rem, 100%);
 }
 
+/* Learn drawer TOC: keep panel viewport-sized so wheel scroll works on hover */
+.toc-sidebar {
+  height: 100dvh;
+  max-height: 100dvh;
+}
+
+.toc-sidebar__body {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
 @media (min-width: 1280px) {
   .book-pages--3d .lesson-card .prose {
     max-width: min(60rem, 100%);

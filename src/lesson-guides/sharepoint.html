@@ -5,10 +5,11 @@
     Try this in Power Automate
   </h5>
   <ul class="steps steps-vertical w-full max-w-2xl">
-    <li class="step step-primary lesson-guided-step text-sm leading-snug text-base-content">On a list you own, create → Automated → When an item is created or modified; select site and list.</li>
-    <li class="step step-primary lesson-guided-step text-sm leading-snug text-base-content">Add Get item using the ID from the trigger dynamic content.</li>
-    <li class="step step-primary lesson-guided-step text-sm leading-snug text-base-content">Add Update item or Send an email using columns from the item.</li>
-    <li class="step step-primary lesson-guided-step text-sm leading-snug text-base-content">Create or edit a list item in SharePoint and confirm the flow run in history.</li>
+    <li class="step step-primary lesson-guided-step text-sm leading-snug text-base-content">Create a Microsoft List (SharePoint) with columns: Title, Priority, Status, DueDate.</li>
+    <li class="step step-primary lesson-guided-step text-sm leading-snug text-base-content">Build an automated flow with When an item is created or modified, then add Get item using trigger ID.</li>
+    <li class="step step-primary lesson-guided-step text-sm leading-snug text-base-content">Add a Condition: if Priority is High and Status is not Complete, send a Teams or email alert.</li>
+    <li class="step step-primary lesson-guided-step text-sm leading-snug text-base-content">Add Update item to set a ProcessingState column so future runs are easier to track.</li>
+    <li class="step step-primary lesson-guided-step text-sm leading-snug text-base-content">Test by creating one high-priority and one normal item; compare run history branches.</li>
   </ul>
   <p class="lesson-guided-footnote">Use a dev or trial environment. Designer labels change over time—use the search box in the add-action panel if a name differs slightly.</p>
 </div>

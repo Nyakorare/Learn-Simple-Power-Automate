@@ -5,10 +5,11 @@
     Try this in Power Automate
   </h5>
   <ul class="steps steps-vertical w-full max-w-2xl">
-    <li class="step step-primary lesson-guided-step text-sm leading-snug text-base-content">In Power Apps Studio, add a button; wire it to create or run an instant cloud flow.</li>
-    <li class="step step-primary lesson-guided-step text-sm leading-snug text-base-content">In the flow, use the Power Apps trigger; define parameters the app will pass.</li>
-    <li class="step step-primary lesson-guided-step text-sm leading-snug text-base-content">Optional: add Respond to Power Apps to return values to the app.</li>
-    <li class="step step-primary lesson-guided-step text-sm leading-snug text-base-content">Publish and play the app; tap the button and confirm the flow run.</li>
+    <li class="step step-primary lesson-guided-step text-sm leading-snug text-base-content">In Power Apps Studio, add a button that runs an instant cloud flow and passes record ID + comment.</li>
+    <li class="step step-primary lesson-guided-step text-sm leading-snug text-base-content">In the flow, use Power Apps trigger input values, then get the full record from SharePoint by ID.</li>
+    <li class="step step-primary lesson-guided-step text-sm leading-snug text-base-content">Add validation branch (for example: missing required fields) before processing.</li>
+    <li class="step step-primary lesson-guided-step text-sm leading-snug text-base-content">Use Respond to Power Apps to return Success, Message, and UpdatedStatus values.</li>
+    <li class="step step-primary lesson-guided-step text-sm leading-snug text-base-content">Back in the app, display returned message in a notification and refresh the gallery/data source.</li>
   </ul>
   <p class="lesson-guided-footnote">Use a dev or trial environment. Designer labels change over time—use the search box in the add-action panel if a name differs slightly.</p>
 </div>
